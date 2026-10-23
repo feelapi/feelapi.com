@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>CAD软件开发要点 | 鹤图工坊</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script src="https://www.googletagmanager.com/gtag/js?id=G-PZWJMD6DJN" async></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PZWJMD6DJN');
+</script><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">CAD软件开发要点</h1><a id="logo" href="/.">鹤图工坊</a><p class="description">深耕几何算法与CAD软件架构，追踪工业软件动态与自主开发，硬核解析几何内核技术</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/cadhistory/"><i class="fa fa-desktop"> 《CAD软件历史》</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">CAD软件开发要点</h1><div class="post-meta">2009-05-27<span> | </span><span class="category"><a href="/categories/CAD%E5%BC%80%E5%8F%91/">CAD开发</a></span></div><div class="post-content"><p>从某牛人那里学来的单子，共享一下，该牛人的Blog在国内是上不去的，嘿嘿。</p>
+<h3 id="需要改正的"><a href="#需要改正的" class="headerlink" title="需要改正的"></a>需要改正的</h3><ul>
+<li>做错的事情</li>
+<li>做的很草率的事情</li>
+<li>不该做的事情</li>
+</ul>
+<p><strong>我的话：</strong>很多事我们只是不去做，因为版本要保持兼容性，等等。其实很多很差的功能还遗留在系统中。当软件变得很庞大，我们不得不花很大的精力使得整个工具系统完备（这是个数学名词，呵呵），也就是是工具系统能够完成用户大部分的需求。如果那些不好的功能妨碍了我们，那就要考虑重构整个系统的工具的设计。</p>
+<span id="more"></span>
+
+<h3 id="Bugs"><a href="#Bugs" class="headerlink" title="Bugs"></a>Bugs</h3><ul>
+<li>这是正确的</li>
+<li>找个办法绕过去</li>
+<li>这是个新特性</li>
+</ul>
+<p><strong>我的话：</strong>很多时候，我们对待bugs的态度就是这样。这也是对用户负责任（这么说听起来不对，如果做过长时间的产品发布管理就会明白这个道理）。不过这有个前提，那就是要保证你的软件经过充分测试之后，才发布。如果用户发现了愚蠢的错误，那就是我们开发者的错误了。</p>
+<h3 id="回归测试"><a href="#回归测试" class="headerlink" title="回归测试"></a>回归测试</h3><ul>
+<li>删除旧的混乱的代码</li>
+<li>重新开始开发</li>
+</ul>
+<p><strong>我的话：</strong>回归测试非常重要，如果没有回归测试，那就不要做上面这两件事情。</p>
+<h3 id="代码重构"><a href="#代码重构" class="headerlink" title="代码重构"></a>代码重构</h3><ul>
+<li>增加单元测试</li>
+<li>按照契约编程</li>
+<li>使用敏捷的开发流程管理</li>
+<li>使用.NET</li>
+</ul>
+<p><strong>我的话：</strong>我对.NET持有疑问。如果做行业应用，专业应用，可以使用，而且最好使用，这个可以提高效率。但是，对于CAD平台本身，最好不要用这个技术。实践证明过，嘿嘿。</p>
+<h3 id="国际化"><a href="#国际化" class="headerlink" title="国际化"></a>国际化</h3><ul>
+<li>过程标准化</li>
+<li>本地化开发</li>
+</ul>
+<p><strong>我的话：</strong>良好的国际化工具很重要。最好做多语言版本的流程和开发分开。将需要做翻译的部分从开发系统中抽出来翻译，然后能够无缝的和发行版本结合起来，这就是这种系统的工作目标了。这需要在CAD软件架构设计之初就考虑到。如果已有架构，那就要考虑重构了。也有一些工具，可以直接翻译编译好的资源，但这个毕竟作用有限。翻译之外，更加重要的是：复查，这个需要有本地的工程师协助，使得符合本地的习惯。中国有中国的行规，翻译的人不一定真正了解。</p>
+<h3 id="运行效率"><a href="#运行效率" class="headerlink" title="运行效率"></a>运行效率</h3><ul>
+<li>大模型测试</li>
+<li>交互操作的效率</li>
+<li>多线程</li>
+<li>64位</li>
+</ul>
+<p><strong>我的话：</strong>这些都是金玉良言。很多时候忘了测试的东西。</p>
+<h3 id="缺少的功能"><a href="#缺少的功能" class="headerlink" title="缺少的功能"></a>缺少的功能</h3><ul>
+<li>知道的功能</li>
+<li>不知道的功能</li>
+</ul>
+<h3 id="新功能"><a href="#新功能" class="headerlink" title="新功能"></a>新功能</h3><ul>
+<li>核心工具</li>
+<li>API</li>
+<li>与行业习惯兼容</li>
+<li>生态系统，包括web service,SOA,twitter,youtube等。</li>
+<li>专业模块，包括钣金，模型，过程设计，知识管理。</li>
+<li>竞争驱动</li>
+<li>合同驱动</li>
+<li>用户希望功能列表</li>
+<li>合作伙伴需求</li>
+<li>CEO的创意</li>
+<li>未来的趋</li>
+</ul>
+<p><strong>我的话：</strong>这里面既有新功能的来源，也有新功能的方向。</p>
+<h3 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h3><ul>
+<li>软件</li>
+<li>硬件</li>
+<li>新的开发工具</li>
+<li>更快，更好，更强壮</li>
+<li>能在手机上运行么？</li>
+</ul>
+<p><strong>我的话：</strong>手机是未来的方向，我们要密切注意这个趋势。还有微软的多触点技术，大屏幕显示技术，都是未来的重点方向。</p>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><ul>
+<li>新的建模核心</li>
+<li>新的约束引擎</li>
+<li>新的文件格式支持</li>
+</ul>
+<p><strong>我的话：</strong>在一个版本稳定之后，就不要随便增加新工具。如果用户需要，可以提高更新的频率。</p>
+<h3 id="集成"><a href="#集成" class="headerlink" title="集成"></a>集成</h3><ul>
+<li>自有的软件</li>
+<li>其他公司的软件</li>
+<li>能够帮助开发的软件</li>
+</ul>
+</div><div class="post-copyright"><script type="text/javascript" src="/js/copyright.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copyright.css?v=1.0.0"><p><span>本文标题：</span>CAD软件开发要点</p><p><span>文章作者：</span>feelapi</p><p><span>发布时间：</span>2009-05-27</p><p><span>最后更新：</span>2026-10-22</p><p><span>原始链接：</span><a href="/CAD软件开发要点.html">https://feelapi.com/CAD%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E8%A6%81%E7%82%B9.html</a><span class="copy-path"><i class="fa fa-clipboard" data-clipboard-text="https://feelapi.com/CAD%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E8%A6%81%E7%82%B9.html"></i></span></p><p><span>版权声明：</span>本文由feelapi创作和发表,遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-Hans">CC 4.0 BY-SA版权协议</a>, 转载请附上原文出处链接及本声明。</p></div><br><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1157108924106752" crossorigin="anonymous"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1157108924106752" data-ad-slot="1062802220" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CAD%E5%BC%80%E5%8F%91/" rel="tag">CAD开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CAD%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" rel="tag">CAD软件架构</a></li></ul></div><div class="post-nav"><a class="pre" href="/%E4%BC%81%E4%B8%9A%E5%AE%B6%E7%9A%84%E6%88%98%E7%95%A5.html">企业家的战略</a><a class="next" href="/%E8%AE%BF%E5%AE%A2%E8%87%B3%E4%B8%8A%E7%9A%84%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E7%A7%98%E7%B1%8D.html">点石成金-访客至上的网页设计秘籍</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="author-info"><a class="info-avatar" href="/about/" title="关于"><img class="nofancybox" src="/images/feelapi.jpg"/></a><p>公众号：鹤图工坊</p><a class="info-icon" href="https://twitter.com/feelapi" title="Twitter" target="_blank" style="margin-inline:5px"> <i class="fa fa-twitter-square" style="margin-inline:5px"></i></a><a class="info-icon" href="mailto:hi@feelapi.com" title="Email" target="_blank" style="margin-inline:5px"> <i class="fa fa-envelope-square" style="margin-inline:5px"></i></a><a class="info-icon" href="https://github.com/feelapi" title="Github" target="_blank" style="margin-inline:5px"> <i class="fa fa-github-square" style="margin-inline:5px"></i></a><a class="info-icon" href="/atom.xml" title="RSS" target="_blank" style="margin-inline:5px"> <i class="fa fa-rss-square" style="margin-inline:5px"></i></a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CAD%E5%BC%80%E5%8F%91/">CAD开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/">几何建模</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/">几何算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/">胡思乱想</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/CAD/" style="font-size: 15px;">CAD</a> <a href="/tags/BIM/" style="font-size: 15px;">BIM</a> <a href="/tags/%E4%B8%9A%E7%95%8C%E6%96%B0%E9%97%BB/" style="font-size: 15px;">业界新闻</a> <a href="/tags/CAD%E5%BC%80%E5%8F%91/" style="font-size: 15px;">CAD开发</a> <a href="/tags/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/" style="font-size: 15px;">几何建模</a> <a href="/tags/iTwin-js/" style="font-size: 15px;">iTwin.js</a> <a href="/tags/WEB%E5%BC%80%E5%8F%91/" style="font-size: 15px;">WEB开发</a> <a href="/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" style="font-size: 15px;">胡思乱想</a> <a href="/tags/%E8%81%8C%E5%9C%BA/" style="font-size: 15px;">职场</a> <a href="/tags/%E5%86%B3%E7%AD%96/" style="font-size: 15px;">决策</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 15px;">读书</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" style="font-size: 15px;">软件开发</a> <a href="/tags/%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">科学</a> <a href="/tags/ACIS/" style="font-size: 15px;">ACIS</a> <a href="/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/" style="font-size: 15px;">几何算法</a> <a href="/tags/CAD%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" style="font-size: 15px;">CAD软件架构</a> <a href="/tags/NURBS/" style="font-size: 15px;">NURBS</a> <a href="/tags/%E5%87%A0%E4%BD%95%E5%BC%95%E6%93%8E/" style="font-size: 15px;">几何引擎</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Manus%E7%AB%8B%E9%A1%B9%E8%AE%A8%E8%AE%BA%E7%BA%AA%E8%A6%81.html">Manus立项讨论纪要</a></li><li class="post-list-item"><a class="post-list-link" href="/ACIS%E6%A8%A1%E5%9D%97.html">ACIS模块</a></li><li class="post-list-item"><a class="post-list-link" href="/NIST%E7%9A%84EXPRESS%E8%AF%AD%E8%A8%80%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C.html">NIST的EXPRESS语言工具开发经验</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1.html">多边形建模</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%94%A8%E4%BA%8ECAE%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E7%89%B9%E6%80%A7.html">用于CAE系统的几何建模特性</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%94%A8%E4%BA%8E%E5%BC%BA%E5%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E6%9C%89%E9%99%90%E5%85%83%E7%BD%91%E6%A0%BC%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html">用于强度分析的有限元网格构建基础</a></li><li class="post-list-item"><a class="post-list-link" href="/NURBS%E7%9A%84%E5%8F%91%E6%98%8E%E8%80%85Ken.Versprille%E8%AE%B2%E8%BF%B0CAD%E7%9A%84%E8%BF%87%E5%8E%BB%E7%8E%B0%E5%9C%A8%E5%92%8C%E6%9C%AA%E6%9D%A5.html">NURBS的发明者Ken.Versprille讲述CAD的过去现在和未来</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%90%8C%E6%AD%A5%E5%BB%BA%E6%A8%A1-%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%B0%9D%E8%AF%95.html">同步建模：第三次尝试</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%8F%98%E5%88%86%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%97%A0%E5%8E%86%E5%8F%B2CAD%E4%B8%AD%E4%BF%9D%E6%8C%81%E8%AE%BE%E8%AE%A1%E6%84%8F%E5%9B%BE.html">变分直接建模：如何在无历史CAD中保持设计意图</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1.html">直接建模</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://www.geometrictools.com/" title="Geometric Tools" target="_blank">Geometric Tools</a><ul></ul><a href="https://www.shapr3d.com/content-library/history-of-cad" title="CAD History" target="_blank">CAD History</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/." rel="nofollow">鹤图工坊.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

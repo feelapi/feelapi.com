@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>鹤图工坊 | 深耕几何算法与CAD软件架构，追踪工业软件动态与自主开发，硬核解析几何内核技术</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script src="https://www.googletagmanager.com/gtag/js?id=G-PZWJMD6DJN" async></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PZWJMD6DJN');
+</script><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">鹤图工坊</h1><a id="logo" href="/.">鹤图工坊</a><p class="description">深耕几何算法与CAD软件架构，追踪工业软件动态与自主开发，硬核解析几何内核技术</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/cadhistory/"><i class="fa fa-desktop"> 《CAD软件历史》</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/Manus%E7%AB%8B%E9%A1%B9%E8%AE%A8%E8%AE%BA%E7%BA%AA%E8%A6%81.html">Manus立项讨论纪要</a></h1><div class="post-meta">2025-12-30</div><div class="post-content"><p>Meta acquired startup Manus to bolster its AI business: <a target="_blank" rel="noopener" href="https://www.bloomberg.com/news/articles/2025-12-29/meta-acquires-startup-manus-to-bolster-ai-business%E3%80%82">https://www.bloomberg.com/news/articles/2025-12-29/meta-acquires-startup-manus-to-bolster-ai-business。</a><br>AI时代真的开始了，这是AI应用开始的标志。</p>
+<p>以下文字从即刻分享的图片中提取的文字记录：</p></div><p class="readmore"><a href="/Manus%E7%AB%8B%E9%A1%B9%E8%AE%A8%E8%AE%BA%E7%BA%AA%E8%A6%81.html">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/ACIS%E6%A8%A1%E5%9D%97.html">ACIS模块</a></h1><div class="post-meta">2025-04-23</div><div class="post-content"><p>ACIS2025支持以下主要模块。</p>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>完整名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>abl</strong></td>
+<td>Advanced Blending (ABL)</td>
+<td>Blending beyond standard blending (BLND)</td>
+</tr>
+<tr>
+<td><strong>adm</strong></td>
+<td>ACIS Deformable Modeling (ADM)</td>
+<td>Free–form 3D sculpting operations on a curve or surface</td>
+</tr>
+<tr>
+<td><strong>phlv5</strong></td>
+<td>Precise Hidden Line Removal V5 (PHLV5)</td>
+<td>Calculates hidden line data and drawshidden line representations of the model</td>
+</tr>
+<tr>
+<td><strong>base</strong></td>
+<td>Base (BASE)</td>
+<td>Provides some very low–level common functionality that is used by all ACIS   components, including memorymanagement, error handling, some basic data types, etc.</td>
+</tr>
+<tr>
+<td><strong>blnd</strong></td>
+<td>Blending (BLND)</td>
+<td>Standard blending operations</td>
+</tr>
+<tr>
+<td><strong>bool</strong></td>
+<td>Boolean (BOOL)</td>
+<td>Unite, intersect, and subtract operations</td>
+</tr>
+<tr>
+<td><strong>clr</strong></td>
+<td>Clearance (CLR)</td>
+<td>Determine minimum distance between bodies or faces</td>
+</tr>
+<tr>
+<td><strong>covr</strong></td>
+<td>Covering (COVR)</td>
+<td>Cover wires and sheets (all boundaries specified)</td>
+</tr>
+<tr>
+<td><strong>cstr</strong></td>
+<td>Constructors (CSTR)</td>
+<td>Basic topology construction; wireframe  construction and editing; analysis (area, length, mass properties)</td>
+</tr>
+<tr>
+<td><strong>ct</strong></td>
+<td>Cellular Topology (CT)</td>
+<td>Divide larger regions up into smaller subregions or cells</td>
+</tr>
+<tr>
+<td><strong>ds</strong></td>
+<td>Standalone Deformable Modeling (SDM)</td>
+<td>Standalone component used by ADM for sculpting operations</td>
+</tr>
+<tr>
+<td><strong>eulr</strong></td>
+<td>Euler Operations (EULR)</td>
+<td>Expand, flatten, separate, and combine lumps</td>
+</tr>
+<tr>
+<td><strong>fct</strong></td>
+<td>Faceter (FCT)</td>
+<td>Generate faceted (polygonal) representation</td>
+</tr>
+<tr>
+<td><strong>ga</strong></td>
+<td>Generic Attributes (GA)</td>
+<td>Attributes that allow applications to exchange data</td>
+</tr>
+<tr>
+<td><strong>gi</strong></td>
+<td>Graphic Interaction (GI)</td>
+<td>Commonly needed graphic display functionality</td>
+</tr>
+<tr>
+<td><strong>gl</strong></td>
+<td>OpenGL (GL)</td>
+<td>Rendering for Windows NT platforms using OpenGL</td>
+</tr>
+<tr>
+<td><strong>heal</strong></td>
+<td>Healing (HEAL)</td>
+<td>Fix models—usually imported from other modeling systems into ACIS—in which  tolerance problems affect how ACISinterprets the model</td>
+</tr>
+<tr>
+<td><strong>ihl</strong></td>
+<td>Interactive Hidden Line (IHL)</td>
+<td>Creates views of ACIS model objects with hidden lines removed</td>
+</tr>
+<tr>
+<td><strong>intr</strong></td>
+<td>Intersectors (INTR)</td>
+<td>Curve&#x2F;curve, curve&#x2F;surface, surface&#x2F;surface intersectors; ray testing; silhouettes;parameter lines; point classification; body checking; curve and surface extension</td>
+</tr>
+<tr>
+<td><strong>kern</strong></td>
+<td>Kernel (KERN)</td>
+<td>Spline interface; basic entity and attribute support; topology and geometry ENTITY classes; construction geometry classes;  math classes; save and restore support;  history and roll support</td>
+</tr>
+<tr>
+<td><strong>law</strong></td>
+<td>Laws (LAWS)</td>
+<td>Provides symbolic representations of equations to solve complex problems</td>
+</tr>
+<tr>
+<td><strong>lop</strong></td>
+<td>Local Ops (LOP)</td>
+<td>Locally manipulating models</td>
+</tr>
+<tr>
+<td><strong>lopt</strong></td>
+<td>Local Op Tools (LOPT)</td>
+<td>Provides tools used in local operations</td>
+</tr>
+<tr>
+<td><strong>ofst</strong></td>
+<td>Offsetting (OFST)</td>
+<td>Wire and face offsetting</td>
+</tr>
+<tr>
+<td><strong>oper</strong></td>
+<td>Operators (OPER)</td>
+<td>Spline conversion</td>
+</tr>
+<tr>
+<td><strong>part</strong></td>
+<td>Part Management (PART)</td>
+<td>Support for grouping entities</td>
+</tr>
+<tr>
+<td><strong>phl</strong></td>
+<td>Precise Hidden Line (PHL)</td>
+<td>Hidden line removal</td>
+</tr>
+<tr>
+<td><strong>pid</strong></td>
+<td>Persistent ID (PID)</td>
+<td>Attach identifiers that persist across saves</td>
+</tr>
+<tr>
+<td><strong>rbase</strong></td>
+<td>Rendering Base (RBASE)</td>
+<td>Interface common to all renderers</td>
+</tr>
+<tr>
+<td><strong>rbi</strong></td>
+<td>Repair Body Intersections (RBI)</td>
+<td>Repairing self-intersections in a body</td>
+</tr>
+<tr>
+<td><strong>rem</strong></td>
+<td>Remove Faces (REM)</td>
+<td>Removing unnecessary faces, such as after a local operation</td>
+</tr>
+<tr>
+<td><strong>sbool</strong></td>
+<td>Selective Booleans (SBOOL)</td>
+<td>Selective Boolean operations (unite,  intersect, subtract) using graph theory</td>
+</tr>
+<tr>
+<td><strong>shl</strong></td>
+<td>Shelling (SHL)</td>
+<td>Create shelled (hollow) bodies</td>
+</tr>
+<tr>
+<td><strong>skin</strong></td>
+<td>Advanced Surfacing (AS)</td>
+<td>Various techniques (including skinning and lofting) for fitting a surface through a set of curves</td>
+</tr>
+<tr>
+<td><strong>stitch</strong></td>
+<td>Stitch (STITCH)</td>
+<td>Stitches a list of faces and bodies into a single body</td>
+</tr>
+<tr>
+<td><strong>swp</strong></td>
+<td>Sweeping (SWP)</td>
+<td>Sweep a profile along a path</td>
+</tr>
+<tr>
+<td><strong>warp</strong></td>
+<td>Space Warping (WARP)</td>
+<td>Uses the ACIS law functionality to warp(twist, bend) entities based on law definitions</td>
+</tr>
+</tbody></table></div><p class="readmore"><a href="/ACIS%E6%A8%A1%E5%9D%97.html">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/NIST%E7%9A%84EXPRESS%E8%AF%AD%E8%A8%80%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C.html">NIST的EXPRESS语言工具开发经验</a></h1><div class="post-meta">2025-01-31</div><div class="post-content"><p>注意：本文基于DeepSeek对附件文档的翻译总结而来，原文档为英文。</p>
+<p>这篇文章详细介绍了NIST（美国国家标准与技术研究院）在1990年发布的EXPRESS工具包的改进过程，并总结了在开发过程中学到的经验和教训。以下是文章的主要结论和总结：</p></div><p class="readmore"><a href="/NIST%E7%9A%84EXPRESS%E8%AF%AD%E8%A8%80%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C.html">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1.html">多边形建模</a></h1><div class="post-meta">2024-02-01</div><div class="post-content"><p>文章来自于翻译，有删减。来源是：<a target="_blank" rel="noopener" href="https://isicad.ru/ru/articles.php?article_num=22791">https://isicad.ru/ru/articles.php?article_num=22791</a></p>
+<p>对于大多数算法来说，仅仅把网格看作一组三角形是不够的，比如从STL格式转换得到的结果。对于这样的网格，你唯一能做的就是绘制它并计算面积。对于其他所有事情，我们需要有一种拓扑结构可供使用，这是多边形建模的基础。</p>
+<p>这个结构有两个主要的组成部分。第一部分是网格拓扑，它描述了顶点、边和多边形之间的关系。它不仅支持三角形，也支持具有任意边数的多边形，或者说是面片。此外，它负责提供一些基本的基元操作，比如，有序遍历与选定面片相邻的面片，有序遍历某个顶点的扇区，进行边的折叠，插入顶点，扔掉边，等等。</p>
+<p>通常，网格本身并不那么有趣，但与之相结合的是一种将面片划分为组的逻辑。这引出了拓扑的第二个组成部分：划分。它有着与标准B-rep模型相同的结构：相同的面、环和边，但是面是链接面片组的，边是由网格边的序列组成的。它也需要一组类似于网格拓扑的基本操作，如遍历相邻段，创建一个新的划分或使用给定的边或面片拆分现有的一个，合并一个或多个段，将边界面片从一个段转移到另一个段，等等。</p>
+<p>插图显示了已有划分的分解。不同的片段以不同的颜色高亮，由一组边指定，这由黄色的折线指示。第二幅图是这次切割的结果。此外，每个拓扑元素必须被赋予一个抽象属性——它可以是一个数字，一个向量，一个表面，或者一个任意结构。</p></div><p class="readmore"><a href="/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1.html">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/%E7%94%A8%E4%BA%8ECAE%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E7%89%B9%E6%80%A7.html">用于CAE系统的几何建模特性</a></h1><div class="post-meta">2024-02-01</div><div class="post-content"><p>文章来自于翻译，有删减。来源是：<a target="_blank" rel="noopener" href="https://isicad.ru/ru/articles.php?article_num=21386">https://isicad.ru/ru/articles.php?article_num=21386</a></p>
+<p>任何CAE系统的主要价值集中在其计算核心：它提供产品的“消费者”特性——计算的质量和可靠性，它们的速度和稳定性。但在计算引擎开始工作之前，你需要将CAD模型导入到CAE应用中并为计算做好准备。负责这些操作的是预处理器以及位于其“内部”的几何内核和数据转换器。CAE系统，特别是那些使用有限元分析方法的系统，对几何内核有特殊的要求，这些要求对于CAD系统来说可能并不那么关键。</p>
+<p>Tor公司的负责人Semyon Dubitsky，该公司开发的ELCUT计算包，如下解释FEA应用的特定性：“CAE程序需要信息关于在多个物体的情况下面和边的出现，因为能量交换的物理过程不仅发生在物体内部，也通过接触的物体边界发生。对面镶贴的质量提出了更高的要求，它不仅用于渲染，而且用于将几何信息传输到有限元网格生成子系统。在CAE领域，有不在结构设计世界中找到的三维模型，比如一个完全沉浸在另一个物体中的物体，一体式部分内部的空腔等——只要想象一下在计算电磁场时，空气也是一种物体。”</p></div><p class="readmore"><a href="/%E7%94%A8%E4%BA%8ECAE%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E7%89%B9%E6%80%A7.html">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/%E7%94%A8%E4%BA%8E%E5%BC%BA%E5%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E6%9C%89%E9%99%90%E5%85%83%E7%BD%91%E6%A0%BC%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html">用于强度分析的有限元网格构建基础</a></h1><div class="post-meta">2024-02-01</div><div class="post-content"><p>文章来自于翻译，原文在：<a target="_blank" rel="noopener" href="https://isicad.ru/ru/articles.php?article_num=21993">https://isicad.ru/ru/articles.php?article_num=21993</a></p>
+<p>模拟是许多行业的必备工具。根据Grand View Research的数据，全球模拟软件市场预计将在2021年至2028年期间以17.1%的复合年增长率增长。这种显著的增长是由于企业使用模拟软件所获得的众多好处。这些包括降低产品开发、物理测试和有缺陷的物理原型的成本。</p>
+<p>在计算机辅助设计应用中，有不同类型的产品分析软件。这些包括有限元分析（FEA）、计算流体动力学（CFD）以及其他许多。进行模拟时，有三个重要的步骤：数据预处理、解决方案和后数据处理。让我们讨论有限元建模中预处理步骤，特别是构建优质网格的重要性。</p></div><p class="readmore"><a href="/%E7%94%A8%E4%BA%8E%E5%BC%BA%E5%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E6%9C%89%E9%99%90%E5%85%83%E7%BD%91%E6%A0%BC%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/NURBS%E7%9A%84%E5%8F%91%E6%98%8E%E8%80%85Ken.Versprille%E8%AE%B2%E8%BF%B0CAD%E7%9A%84%E8%BF%87%E5%8E%BB%E7%8E%B0%E5%9C%A8%E5%92%8C%E6%9C%AA%E6%9D%A5.html">NURBS的发明者Ken.Versprille讲述CAD的过去现在和未来</a></h1><div class="post-meta">2024-01-31</div><div class="post-content"><p>文章来自于翻译，原文在：<a target="_blank" rel="noopener" href="https://isicad.net/articles.php?article_num=16045">https://isicad.net/articles.php?article_num=16045</a></p>
+<p>Ken Versprille博士以他在CAD行业的杰出贡献而闻名。他在应用基于计算机的解决方案于工程和制造企业上拥有超过40年的经验。他在CAD&#x2F;CAM&#x2F;CAE&#x2F;CIM领域的研究和开发以及咨询方面都曾担任高级职位。2005年，他因发明了对CAD发展有着无可估量贡献的NURBS，从一个非商业CAD协会——CAD Society，获得了终身成就奖。</p>
+<p>Versprille博士将于2013年5月30日至6月1日出席在俄罗斯圣彼得堡举行的COFES俄罗斯活动。作为这次活动的赞助商（由Cyon Research组织），我们有幸在他访问俄罗斯两个月前采访了Ken Versprille。以下是我们与这位非凡之人长时间对话的简短摘录。</p></div><p class="readmore"><a href="/NURBS%E7%9A%84%E5%8F%91%E6%98%8E%E8%80%85Ken.Versprille%E8%AE%B2%E8%BF%B0CAD%E7%9A%84%E8%BF%87%E5%8E%BB%E7%8E%B0%E5%9C%A8%E5%92%8C%E6%9C%AA%E6%9D%A5.html">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/%E5%90%8C%E6%AD%A5%E5%BB%BA%E6%A8%A1-%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%B0%9D%E8%AF%95.html">同步建模：第三次尝试</a></h1><div class="post-meta">2024-01-31</div><div class="post-content"><p>文章来自于翻译，原文在：<a target="_blank" rel="noopener" href="https://isicad.net/articles.php?article_num=14064">https://isicad.net/articles.php?article_num=14064</a></p>
+<h2 id="第三代同步技术"><a href="#第三代同步技术" class="headerlink" title="第三代同步技术"></a>第三代同步技术</h2><p>根据Deelip [Menezes, 2010]的说法，Solid Edge ST3的新版本具有显着修改的功能树。现在它包括三个部分：有序特征，同步特征和简化视图。首个部分对所有基于由Dr. Samuel Geisberg发展的概念的系统都是典型的，该概念首次在Pro &#x2F; Engineer中实现（然后在CATIA，NX，Solid Edge，SolidWorks，Inventor和许多其他MCAD系统中重复）。它具有通常的参数特征（基于它们的平面草图以及垫片，孔，倒角，圆角，口袋等）。它们形成了一个基于历史的有序树，反映了它们之间的相互依赖。可以使用特殊的对话形式编辑此类特征（例如，可以更改孔的类型，直径，深度和位置）。专业的MCAD用户对此了如指掌。</p>
+<p>Solid Edge树的另一部分具有同步特征，这些特征最初出现在同步技术的第一次实现中。它们看起来像普通的特征，但具有一个重要的优点：可以通过直接编辑几何图形，任意拖动3D体表面并更改它们的形状来更改这些特征。这就是用户看到的样子：</p></div><p class="readmore"><a href="/%E5%90%8C%E6%AD%A5%E5%BB%BA%E6%A8%A1-%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%B0%9D%E8%AF%95.html">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/%E5%8F%98%E5%88%86%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%97%A0%E5%8E%86%E5%8F%B2CAD%E4%B8%AD%E4%BF%9D%E6%8C%81%E8%AE%BE%E8%AE%A1%E6%84%8F%E5%9B%BE.html">变分直接建模：如何在无历史CAD中保持设计意图</a></h1><div class="post-meta">2024-01-31</div><div class="post-content"><p>文章来自于翻译，原文在：<a target="_blank" rel="noopener" href="https://isicad.net/articles.php?article_num=12886">https://isicad.net/articles.php?article_num=12886</a></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>如果使用最先进的3D建模程序（CAD）创建新模型或编辑现有模型似乎复杂到你无法在几个小时内掌握，或许值得关注新的设计技术。即使孩子们也能清晰地在2D画中描绘出他们的思想和梦想；然而，并非每个成年人都能应对到3D图像的过渡，尤其是基于历史的设计技术，如参数化的特征造型，这是大多数“机械”CAD的标准。创建一个基于特征的模型并不难；难的是改变模型时控制特征之间的关系。编辑在不同CAD系统中创建的模型更加困难：因为没有单一的特征标准，所以在翻译过程中一些历史数据必然会丢失。</p></div><p class="readmore"><a href="/%E5%8F%98%E5%88%86%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%97%A0%E5%8E%86%E5%8F%B2CAD%E4%B8%AD%E4%BF%9D%E6%8C%81%E8%AE%BE%E8%AE%A1%E6%84%8F%E5%9B%BE.html">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1.html">直接建模</a></h1><div class="post-meta">2024-01-31</div><div class="post-content"><p>文章来自于翻译，原文在：<a target="_blank" rel="noopener" href="https://isicad.net/articles.php?article_num=14805">https://isicad.net/articles.php?article_num=14805</a></p>
+<p>当1985年前苏联的移民、原列宁格勒大学教授塞缪尔·格斯伯格在美国创办了参数化技术公司(PTC)，以开发改变了MCAD（机械计算机辅助设计软件）市场的Pro&#x2F;Engineer系统时，他能想象到基于参数特性的建模会在行业中占主导地位长达四分之一个世纪，并且所有领先的MCAD系统（如CATIA和NX，以及代表Windows一代系统的SolidWorks、Inventor和Solid Edge）会成为Pro&#x2F;Engineer的意识形态后继者吗？他能猜到PTC在取得难以置信的商业成功后，会出人意料地决定牺牲他们的“神圣不可侵犯的”的Pro&#x2F;Engineer品牌吗？</p></div><p class="readmore"><a href="/%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1.html">阅读全文</a></p></div><nav class="page-navigator"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页</a></nav></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="author-info"><a class="info-avatar" href="/about/" title="关于"><img class="nofancybox" src="/images/feelapi.jpg"/></a><p>公众号：鹤图工坊</p><a class="info-icon" href="https://twitter.com/feelapi" title="Twitter" target="_blank" style="margin-inline:5px"> <i class="fa fa-twitter-square" style="margin-inline:5px"></i></a><a class="info-icon" href="mailto:hi@feelapi.com" title="Email" target="_blank" style="margin-inline:5px"> <i class="fa fa-envelope-square" style="margin-inline:5px"></i></a><a class="info-icon" href="https://github.com/feelapi" title="Github" target="_blank" style="margin-inline:5px"> <i class="fa fa-github-square" style="margin-inline:5px"></i></a><a class="info-icon" href="/atom.xml" title="RSS" target="_blank" style="margin-inline:5px"> <i class="fa fa-rss-square" style="margin-inline:5px"></i></a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CAD%E5%BC%80%E5%8F%91/">CAD开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/">几何建模</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/">几何算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/">胡思乱想</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/CAD/" style="font-size: 15px;">CAD</a> <a href="/tags/BIM/" style="font-size: 15px;">BIM</a> <a href="/tags/%E4%B8%9A%E7%95%8C%E6%96%B0%E9%97%BB/" style="font-size: 15px;">业界新闻</a> <a href="/tags/CAD%E5%BC%80%E5%8F%91/" style="font-size: 15px;">CAD开发</a> <a href="/tags/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/" style="font-size: 15px;">几何建模</a> <a href="/tags/iTwin-js/" style="font-size: 15px;">iTwin.js</a> <a href="/tags/WEB%E5%BC%80%E5%8F%91/" style="font-size: 15px;">WEB开发</a> <a href="/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" style="font-size: 15px;">胡思乱想</a> <a href="/tags/%E8%81%8C%E5%9C%BA/" style="font-size: 15px;">职场</a> <a href="/tags/%E5%86%B3%E7%AD%96/" style="font-size: 15px;">决策</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 15px;">读书</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" style="font-size: 15px;">软件开发</a> <a href="/tags/%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">科学</a> <a href="/tags/ACIS/" style="font-size: 15px;">ACIS</a> <a href="/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/" style="font-size: 15px;">几何算法</a> <a href="/tags/CAD%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" style="font-size: 15px;">CAD软件架构</a> <a href="/tags/NURBS/" style="font-size: 15px;">NURBS</a> <a href="/tags/%E5%87%A0%E4%BD%95%E5%BC%95%E6%93%8E/" style="font-size: 15px;">几何引擎</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Manus%E7%AB%8B%E9%A1%B9%E8%AE%A8%E8%AE%BA%E7%BA%AA%E8%A6%81.html">Manus立项讨论纪要</a></li><li class="post-list-item"><a class="post-list-link" href="/ACIS%E6%A8%A1%E5%9D%97.html">ACIS模块</a></li><li class="post-list-item"><a class="post-list-link" href="/NIST%E7%9A%84EXPRESS%E8%AF%AD%E8%A8%80%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C.html">NIST的EXPRESS语言工具开发经验</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1.html">多边形建模</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%94%A8%E4%BA%8ECAE%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E7%89%B9%E6%80%A7.html">用于CAE系统的几何建模特性</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%94%A8%E4%BA%8E%E5%BC%BA%E5%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E6%9C%89%E9%99%90%E5%85%83%E7%BD%91%E6%A0%BC%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html">用于强度分析的有限元网格构建基础</a></li><li class="post-list-item"><a class="post-list-link" href="/NURBS%E7%9A%84%E5%8F%91%E6%98%8E%E8%80%85Ken.Versprille%E8%AE%B2%E8%BF%B0CAD%E7%9A%84%E8%BF%87%E5%8E%BB%E7%8E%B0%E5%9C%A8%E5%92%8C%E6%9C%AA%E6%9D%A5.html">NURBS的发明者Ken.Versprille讲述CAD的过去现在和未来</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%90%8C%E6%AD%A5%E5%BB%BA%E6%A8%A1-%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%B0%9D%E8%AF%95.html">同步建模：第三次尝试</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%8F%98%E5%88%86%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%97%A0%E5%8E%86%E5%8F%B2CAD%E4%B8%AD%E4%BF%9D%E6%8C%81%E8%AE%BE%E8%AE%A1%E6%84%8F%E5%9B%BE.html">变分直接建模：如何在无历史CAD中保持设计意图</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1.html">直接建模</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://www.geometrictools.com/" title="Geometric Tools" target="_blank">Geometric Tools</a><ul></ul><a href="https://www.shapr3d.com/content-library/history-of-cad" title="CAD History" target="_blank">CAD History</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/." rel="nofollow">鹤图工坊.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

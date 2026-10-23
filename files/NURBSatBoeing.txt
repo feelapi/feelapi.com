@@ -1,0 +1,55 @@
+The history of NURBS at Boeing goes back to 1979 when Boeing began to staff up for the purpose of developing their own comprehensive CAD/CAM system, TIGER, to support the wide variety of applications needed by their various aircraft and aerospace engineering groups. 
+
+Three basic decisions were critical to establishing an environment conducive to the development of NURBS. The first was Boeing’s need to develop their own in-house geometry capability. Boeing had special, rather sophisticated, surface geometry needs, especially for wing design, that could not be found in any commercially available CAD/CAM system. As a result, the TIGER Geometry Development Group was established in 1979 and strongly supported for many years.
+
+The second decision critical to NURBS development was the removal of the constraint of upward geometrical compatibility with the two systems in use at Boeing at that time. One of these systems had evolved as a result of the iterative process inherent to wing design. The other was best suited for adding the constraints imposed by manufacturing such as cylindrical and planar regions.
+
+The third decision was simple but crucial and added the ‘R’ to ‘NURBS’. Circles were to be represented exactly: no cubic approximations would be allowed.  
+
+By late 1979 there were 5 or 6 of us in this Geometry Development Group. We were well educated mathematicians (PhD’s from Stanford, Harvard, Washington and Minnesota) and some of us had many years of software experience, but none of us had any industrial, much less CAD, geometry experience. Those were the days of the oversupply of math PhD’s. Our task was to choose the representations for the 11 required curve forms, which included everything from lines and circles to Bezier and B-spline curves.
+
+
+Our rather limited reference material consisted of Faux and Pratt’s geometry book, deBoor’s Guide to Splines and Lane and Riesenfeld’s Bezier subdivision paper. It is interesting to note that Jeff Lane was a member of the TIGER Graphics Group and was eventually assigned the task of implementing our NURBS definition within the production TIGER system. 
+
+
+By early 1980, we were busy choosing curve representations and developing the geometry algorithms for TIGER. One of the major tasks was curve/curve intersection, which was assigned to Eugene Lee. He noticed very quickly that he could solve the general intersection problem if he could solve it for the Bezier/Bezier case, since everything could be represented in Bezier form at the lowest level. We soon realized that our geometry development task would be substantially simplified if we could find a way to represent all of our curves using a single form.
+
+With this motivation we started down the road toward what became NURBS. Consider: the design of a wing demands free- form, C2 continuous, cubic splines to satisfy the needs of aerodynamic analysis, yet the circle and cylinders of manufacturing require at least rational Bezier curves. The properties of Bezier curves and uniform B-splines were well known, but we had to gain an understanding of non-uniform B-splines and rational Bezier curves and try to integrate the two. 
+
+Since Eugene needed to convert circles and other conics to rational Bezier curves for his curve/curve intersection, he became the Bezier conics expert. His work eventually led to an internal memo of February ’81, A Treatment of Conics in Parametric Rational Bezier Form. At that time, none of us realized the importance of our work: Eugene felt this memo was “too trivial” and “nothing new” so that it was several years before he incorporated it into one of his later publications. The transition from uniform to non-uniform B-splines was rather straight forward, since the mathematical foundation had been available in the literature for many years. It just had not yet become a part of standard CAD/CAM applied mathematics.
+
+
+Once we had a reasonably good understanding of rational Bezier and non- uniform splines, we still had to put them together. Up to this point, we had not written or seen the form 
+P(t) = å w P b (t) / å w b (t)
+
+for anything more than a conic Bezier segment. Searching for a single form, our group worked together, learning about knots, multiple knots and how nicely Bezier segments, especially the conics, could be imbedded into a B-spline curve with multiple knots. Looking back, it seems so simple: It is easy to verify that the equation for P(t) is valid for the B-spline basis functions as well as for Bernstein basis functions. By the end of 1980 we knew we had a way to represent all our required curve forms using a single representation, now know as the NURBS form.
+
+
+But this new representation could easily have died at this point. We were already 12 to 18 months down our development path. We had completed a large number of algorithms using the old curve forms. We now had to convince our managers and the other technical groups, such as the database and graphics groups, that we should be allowed to start over using a single representation for all curves. The NURBS surface form did not present a problem since we had not yet developed any surface algorithms. The review of this new TIGER curve form was held on February 13, 1981. The review was successful and we were allowed to start over using the new curve form. It was at this time that the NURBS acronym was first used by the other side of the TIGER project, i.e., the TIGER software development groups of Boeing Computer Services.
+
+Our management was very eager to promote the use of these new curve and surface forms. They had a limited understanding of the mathematics but they were very aware of the need to communicate geometric data between systems. Hence, Boeing very quickly prepared to propose NURBS to the August ’81 IGES meetings. Richard Fuhr, of our group, was assigned the job of presenting NURBS to IGES. His presentation was very well received and shortly afterwards he put together the Boeing document A Technical Introduction to the Rational B-spline Representation for Curves and Surfaces (D6-48379-100). This document was distributed to many IGES members.
+
+There are two reasons why NURBS were so quickly accepted by IGES. The first was that IGES was in great need of a way to represent objects. Up to that point there were, for example, only two surface definitions in IGES and I believe the B-spline form was restricted to cubic splines. The other, surprisingly important, reason for the rapid acceptance was that Boeing, not being a CAD system supplier, was not a threat to any of the major turnkey system vendors. Evidently, IGES easily bogs down when different vendors support their own slightly different representations for the same objects.
+
+
+At this first IGES meeting, it was discovered that the people with the best understanding of Fuhr’s presentation were the SDRC representatives. Evidently SDRC was also active in defining a single representation for the standard CAD curves and was working on a similar definition.
+
+So that’s how NURBS started at Boeing. For me, Boehm’s B-spline refinement paper from CAD ’80 was of primary importance. It enabled me to understand non-uniform splines and to appreciate the geometrical nature of the definition so as to use B-splines in solving engineering problems. Our first use of the geometrical nature of B-splines was in Lee’s curve/curve intersection. He used the Bezier subdivision process, a second use was our curve offset algorithm, which was based on a polygon offset process that was eventually communicated to and used by SDRC and explained by Tiller and Hanson in their offset paper of 1984.
+
+We also developed an internal NURBS class which Eugene Lee, Richard Rice and I taught to about 75 Boeing engineers. Lee covered Bezier curves, I went from Bezier to B- spline and Rice covered surfaces. The first public presentation of our NURBS work was at a Seattle CASA/SME seminar in March of 1982. We had progressed quite far by then. We could take a rather simple NURBS surface definition of an aircraft and slice it with a plane surface to generate an interesting outline of some of the wing, body and engines.
+
+
+Unfortunately, almost without exception, large companies don’t seem to know what to do with new technology. Certainly Boeing did not. We were allowed great freedom in pursuing our ideas and Boeing correctly promoted NURBS, but the task of developing that technology into a useable form was too much for Boeing, which abandoned the TIGER task late in ’84.
+
+For the record, by late 1980, the TIGER Geometry Development Group consisted of Robert Blomgren, Richard Fuhr, George Graf,Peter Kochevar, Eugene Lee, Miriam Lucian and Richard Rice. My position was that of “lead engineer”. Richard Smith was our supervisor and the manager of the TIGER project was Robert Barnes. As is written at the end of an obituary, “Peace to the memory of TIGER”.
+
+Robert M. Blomgren
+Applied Geometry
+Seattle, Washington
+January 8, 1990
+
+
+
+
+
+

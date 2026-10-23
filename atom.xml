@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>鹤图工坊</title>
+  
+  <subtitle>深耕几何算法与CAD软件架构，追踪工业软件动态与自主开发，硬核解析几何内核技术</subtitle>
+  <link href="https://feelapi.com/atom.xml" rel="self"/>
+  
+  <link href="https://feelapi.com/"/>
+  <updated>2025-12-30T03:11:33.275Z</updated>
+  <id>https://feelapi.com/</id>
+  
+  <author>
+    <name>feelapi</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Manus立项讨论纪要</title>
+    <link href="https://feelapi.com/Manus%E7%AB%8B%E9%A1%B9%E8%AE%A8%E8%AE%BA%E7%BA%AA%E8%A6%81.html"/>
+    <id>https://feelapi.com/Manus%E7%AB%8B%E9%A1%B9%E8%AE%A8%E8%AE%BA%E7%BA%AA%E8%A6%81.html</id>
+    <published>2025-12-30T02:02:00.000Z</published>
+    <updated>2025-12-30T03:11:33.275Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Meta acquired startup Manus to bolster its AI business: &lt;a href=&quot;https://www.bloomberg.com/news/articles/2025-12-29/meta-acquires-startup-manus-to-bolster-ai-business%E3%80%82&quot;&gt;https://www.bloomberg.com/news/articles/2025-12-29/meta-acquires-startup-manus-to-bolster-ai-business。&lt;/a&gt;&lt;br&gt;AI时代真的开始了，这是AI应用开始的标志。&lt;/p&gt;
+&lt;p&gt;以下文字从即刻分享的图片中提取的文字记录：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="胡思乱想" scheme="https://feelapi.com/categories/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+    
+    <category term="胡思乱想" scheme="https://feelapi.com/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ACIS模块</title>
+    <link href="https://feelapi.com/ACIS%E6%A8%A1%E5%9D%97.html"/>
+    <id>https://feelapi.com/ACIS%E6%A8%A1%E5%9D%97.html</id>
+    <published>2025-04-23T06:02:00.000Z</published>
+    <updated>2025-05-18T13:55:24.404Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;ACIS2025支持以下主要模块。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;缩写&lt;/th&gt;
+&lt;th&gt;完整名称&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;abl&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Advanced Blending (ABL)&lt;/td&gt;
+&lt;td&gt;Blending beyond standard blending (BLND)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;adm&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;ACIS Deformable Modeling (ADM)&lt;/td&gt;
+&lt;td&gt;Free–form 3D sculpting operations on a curve or surface&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;phlv5&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Precise Hidden Line Removal V5 (PHLV5)&lt;/td&gt;
+&lt;td&gt;Calculates hidden line data and drawshidden line representations of the model&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;base&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Base (BASE)&lt;/td&gt;
+&lt;td&gt;Provides some very low–level common functionality that is used by all ACIS   components, including memorymanagement, error handling, some basic data types, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;blnd&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Blending (BLND)&lt;/td&gt;
+&lt;td&gt;Standard blending operations&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;bool&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Boolean (BOOL)&lt;/td&gt;
+&lt;td&gt;Unite, intersect, and subtract operations&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;clr&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Clearance (CLR)&lt;/td&gt;
+&lt;td&gt;Determine minimum distance between bodies or faces&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;covr&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Covering (COVR)&lt;/td&gt;
+&lt;td&gt;Cover wires and sheets (all boundaries specified)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;cstr&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Constructors (CSTR)&lt;/td&gt;
+&lt;td&gt;Basic topology construction; wireframe  construction and editing; analysis (area, length, mass properties)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ct&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Cellular Topology (CT)&lt;/td&gt;
+&lt;td&gt;Divide larger regions up into smaller subregions or cells&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ds&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Standalone Deformable Modeling (SDM)&lt;/td&gt;
+&lt;td&gt;Standalone component used by ADM for sculpting operations&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;eulr&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Euler Operations (EULR)&lt;/td&gt;
+&lt;td&gt;Expand, flatten, separate, and combine lumps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;fct&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Faceter (FCT)&lt;/td&gt;
+&lt;td&gt;Generate faceted (polygonal) representation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ga&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Generic Attributes (GA)&lt;/td&gt;
+&lt;td&gt;Attributes that allow applications to exchange data&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;gi&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Graphic Interaction (GI)&lt;/td&gt;
+&lt;td&gt;Commonly needed graphic display functionality&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;gl&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;OpenGL (GL)&lt;/td&gt;
+&lt;td&gt;Rendering for Windows NT platforms using OpenGL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;heal&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Healing (HEAL)&lt;/td&gt;
+&lt;td&gt;Fix models—usually imported from other modeling systems into ACIS—in which  tolerance problems affect how ACISinterprets the model&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ihl&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Interactive Hidden Line (IHL)&lt;/td&gt;
+&lt;td&gt;Creates views of ACIS model objects with hidden lines removed&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;intr&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Intersectors (INTR)&lt;/td&gt;
+&lt;td&gt;Curve&amp;#x2F;curve, curve&amp;#x2F;surface, surface&amp;#x2F;surface intersectors; ray testing; silhouettes;parameter lines; point classification; body checking; curve and surface extension&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;kern&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Kernel (KERN)&lt;/td&gt;
+&lt;td&gt;Spline interface; basic entity and attribute support; topology and geometry ENTITY classes; construction geometry classes;  math classes; save and restore support;  history and roll support&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;law&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Laws (LAWS)&lt;/td&gt;
+&lt;td&gt;Provides symbolic representations of equations to solve complex problems&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;lop&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Local Ops (LOP)&lt;/td&gt;
+&lt;td&gt;Locally manipulating models&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;lopt&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Local Op Tools (LOPT)&lt;/td&gt;
+&lt;td&gt;Provides tools used in local operations&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ofst&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Offsetting (OFST)&lt;/td&gt;
+&lt;td&gt;Wire and face offsetting&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;oper&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Operators (OPER)&lt;/td&gt;
+&lt;td&gt;Spline conversion&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;part&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Part Management (PART)&lt;/td&gt;
+&lt;td&gt;Support for grouping entities&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;phl&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Precise Hidden Line (PHL)&lt;/td&gt;
+&lt;td&gt;Hidden line removal&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;pid&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Persistent ID (PID)&lt;/td&gt;
+&lt;td&gt;Attach identifiers that persist across saves&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;rbase&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Rendering Base (RBASE)&lt;/td&gt;
+&lt;td&gt;Interface common to all renderers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;rbi&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Repair Body Intersections (RBI)&lt;/td&gt;
+&lt;td&gt;Repairing self-intersections in a body&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;rem&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Remove Faces (REM)&lt;/td&gt;
+&lt;td&gt;Removing unnecessary faces, such as after a local operation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;sbool&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Selective Booleans (SBOOL)&lt;/td&gt;
+&lt;td&gt;Selective Boolean operations (unite,  intersect, subtract) using graph theory&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;shl&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Shelling (SHL)&lt;/td&gt;
+&lt;td&gt;Create shelled (hollow) bodies&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;skin&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Advanced Surfacing (AS)&lt;/td&gt;
+&lt;td&gt;Various techniques (including skinning and lofting) for fitting a surface through a set of curves&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;stitch&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Stitch (STITCH)&lt;/td&gt;
+&lt;td&gt;Stitches a list of faces and bodies into a single body&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;swp&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Sweeping (SWP)&lt;/td&gt;
+&lt;td&gt;Sweep a profile along a path&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;warp&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Space Warping (WARP)&lt;/td&gt;
+&lt;td&gt;Uses the ACIS law functionality to warp(twist, bend) entities based on law definitions&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
+    
+    
+    
+    <category term="几何算法" scheme="https://feelapi.com/categories/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/tags/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="ACIS" scheme="https://feelapi.com/tags/ACIS/"/>
+    
+    <category term="几何算法" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="几何引擎" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NIST的EXPRESS语言工具开发经验</title>
+    <link href="https://feelapi.com/NIST%E7%9A%84EXPRESS%E8%AF%AD%E8%A8%80%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C.html"/>
+    <id>https://feelapi.com/NIST%E7%9A%84EXPRESS%E8%AF%AD%E8%A8%80%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C.html</id>
+    <published>2025-01-31T06:02:00.000Z</published>
+    <updated>2025-05-18T13:44:13.588Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;注意：本文基于DeepSeek对附件文档的翻译总结而来，原文档为英文。&lt;/p&gt;
+&lt;p&gt;这篇文章详细介绍了NIST（美国国家标准与技术研究院）在1990年发布的EXPRESS工具包的改进过程，并总结了在开发过程中学到的经验和教训。以下是文章的主要结论和总结：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/categories/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/tags/CAD%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多边形建模</title>
+    <link href="https://feelapi.com/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1.html"/>
+    <id>https://feelapi.com/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1.html</id>
+    <published>2024-02-01T11:15:00.000Z</published>
+    <updated>2025-05-18T13:57:03.523Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;文章来自于翻译，有删减。来源是：&lt;a href=&quot;https://isicad.ru/ru/articles.php?article_num=22791&quot;&gt;https://isicad.ru/ru/articles.php?article_num=22791&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;对于大多数算法来说，仅仅把网格看作一组三角形是不够的，比如从STL格式转换得到的结果。对于这样的网格，你唯一能做的就是绘制它并计算面积。对于其他所有事情，我们需要有一种拓扑结构可供使用，这是多边形建模的基础。&lt;/p&gt;
+&lt;p&gt;这个结构有两个主要的组成部分。第一部分是网格拓扑，它描述了顶点、边和多边形之间的关系。它不仅支持三角形，也支持具有任意边数的多边形，或者说是面片。此外，它负责提供一些基本的基元操作，比如，有序遍历与选定面片相邻的面片，有序遍历某个顶点的扇区，进行边的折叠，插入顶点，扔掉边，等等。&lt;/p&gt;
+&lt;p&gt;通常，网格本身并不那么有趣，但与之相结合的是一种将面片划分为组的逻辑。这引出了拓扑的第二个组成部分：划分。它有着与标准B-rep模型相同的结构：相同的面、环和边，但是面是链接面片组的，边是由网格边的序列组成的。它也需要一组类似于网格拓扑的基本操作，如遍历相邻段，创建一个新的划分或使用给定的边或面片拆分现有的一个，合并一个或多个段，将边界面片从一个段转移到另一个段，等等。&lt;/p&gt;
+&lt;p&gt;插图显示了已有划分的分解。不同的片段以不同的颜色高亮，由一组边指定，这由黄色的折线指示。第二幅图是这次切割的结果。此外，每个拓扑元素必须被赋予一个抽象属性——它可以是一个数字，一个向量，一个表面，或者一个任意结构。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="几何建模" scheme="https://feelapi.com/categories/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/"/>
+    
+    
+    <category term="几何建模" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/"/>
+    
+    <category term="几何算法" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用于CAE系统的几何建模特性</title>
+    <link href="https://feelapi.com/%E7%94%A8%E4%BA%8ECAE%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E7%89%B9%E6%80%A7.html"/>
+    <id>https://feelapi.com/%E7%94%A8%E4%BA%8ECAE%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E7%89%B9%E6%80%A7.html</id>
+    <published>2024-02-01T09:15:00.000Z</published>
+    <updated>2025-05-18T13:54:40.265Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;文章来自于翻译，有删减。来源是：&lt;a href=&quot;https://isicad.ru/ru/articles.php?article_num=21386&quot;&gt;https://isicad.ru/ru/articles.php?article_num=21386&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;任何CAE系统的主要价值集中在其计算核心：它提供产品的“消费者”特性——计算的质量和可靠性，它们的速度和稳定性。但在计算引擎开始工作之前，你需要将CAD模型导入到CAE应用中并为计算做好准备。负责这些操作的是预处理器以及位于其“内部”的几何内核和数据转换器。CAE系统，特别是那些使用有限元分析方法的系统，对几何内核有特殊的要求，这些要求对于CAD系统来说可能并不那么关键。&lt;/p&gt;
+&lt;p&gt;Tor公司的负责人Semyon Dubitsky，该公司开发的ELCUT计算包，如下解释FEA应用的特定性：“CAE程序需要信息关于在多个物体的情况下面和边的出现，因为能量交换的物理过程不仅发生在物体内部，也通过接触的物体边界发生。对面镶贴的质量提出了更高的要求，它不仅用于渲染，而且用于将几何信息传输到有限元网格生成子系统。在CAE领域，有不在结构设计世界中找到的三维模型，比如一个完全沉浸在另一个物体中的物体，一体式部分内部的空腔等——只要想象一下在计算电磁场时，空气也是一种物体。”&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="几何建模" scheme="https://feelapi.com/categories/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/"/>
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/tags/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="几何建模" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用于强度分析的有限元网格构建基础</title>
+    <link href="https://feelapi.com/%E7%94%A8%E4%BA%8E%E5%BC%BA%E5%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E6%9C%89%E9%99%90%E5%85%83%E7%BD%91%E6%A0%BC%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html"/>
+    <id>https://feelapi.com/%E7%94%A8%E4%BA%8E%E5%BC%BA%E5%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E6%9C%89%E9%99%90%E5%85%83%E7%BD%91%E6%A0%BC%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html</id>
+    <published>2024-02-01T08:15:00.000Z</published>
+    <updated>2024-02-01T07:57:30.908Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;文章来自于翻译，原文在：&lt;a href=&quot;https://isicad.ru/ru/articles.php?article_num=21993&quot;&gt;https://isicad.ru/ru/articles.php?article_num=21993&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;模拟是许多行业的必备工具。根据Grand View Research的数据，全球模拟软件市场预计将在2021年至2028年期间以17.1%的复合年增长率增长。这种显著的增长是由于企业使用模拟软件所获得的众多好处。这些包括降低产品开发、物理测试和有缺陷的物理原型的成本。&lt;/p&gt;
+&lt;p&gt;在计算机辅助设计应用中，有不同类型的产品分析软件。这些包括有限元分析（FEA）、计算流体动力学（CFD）以及其他许多。进行模拟时，有三个重要的步骤：数据预处理、解决方案和后数据处理。让我们讨论有限元建模中预处理步骤，特别是构建优质网格的重要性。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/categories/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/tags/CAD%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NURBS的发明者Ken.Versprille讲述CAD的过去现在和未来</title>
+    <link href="https://feelapi.com/NURBS%E7%9A%84%E5%8F%91%E6%98%8E%E8%80%85Ken.Versprille%E8%AE%B2%E8%BF%B0CAD%E7%9A%84%E8%BF%87%E5%8E%BB%E7%8E%B0%E5%9C%A8%E5%92%8C%E6%9C%AA%E6%9D%A5.html"/>
+    <id>https://feelapi.com/NURBS%E7%9A%84%E5%8F%91%E6%98%8E%E8%80%85Ken.Versprille%E8%AE%B2%E8%BF%B0CAD%E7%9A%84%E8%BF%87%E5%8E%BB%E7%8E%B0%E5%9C%A8%E5%92%8C%E6%9C%AA%E6%9D%A5.html</id>
+    <published>2024-01-31T11:15:00.000Z</published>
+    <updated>2025-05-18T13:56:25.219Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;文章来自于翻译，原文在：&lt;a href=&quot;https://isicad.net/articles.php?article_num=16045&quot;&gt;https://isicad.net/articles.php?article_num=16045&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ken Versprille博士以他在CAD行业的杰出贡献而闻名。他在应用基于计算机的解决方案于工程和制造企业上拥有超过40年的经验。他在CAD&amp;#x2F;CAM&amp;#x2F;CAE&amp;#x2F;CIM领域的研究和开发以及咨询方面都曾担任高级职位。2005年，他因发明了对CAD发展有着无可估量贡献的NURBS，从一个非商业CAD协会——CAD Society，获得了终身成就奖。&lt;/p&gt;
+&lt;p&gt;Versprille博士将于2013年5月30日至6月1日出席在俄罗斯圣彼得堡举行的COFES俄罗斯活动。作为这次活动的赞助商（由Cyon Research组织），我们有幸在他访问俄罗斯两个月前采访了Ken Versprille。以下是我们与这位非凡之人长时间对话的简短摘录。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="几何算法" scheme="https://feelapi.com/categories/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="几何算法" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="NURBS" scheme="https://feelapi.com/tags/NURBS/"/>
+    
+    <category term="几何引擎" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>同步建模：第三次尝试</title>
+    <link href="https://feelapi.com/%E5%90%8C%E6%AD%A5%E5%BB%BA%E6%A8%A1-%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%B0%9D%E8%AF%95.html"/>
+    <id>https://feelapi.com/%E5%90%8C%E6%AD%A5%E5%BB%BA%E6%A8%A1-%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%B0%9D%E8%AF%95.html</id>
+    <published>2024-01-31T08:25:00.000Z</published>
+    <updated>2025-05-18T13:56:59.221Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;文章来自于翻译，原文在：&lt;a href=&quot;https://isicad.net/articles.php?article_num=14064&quot;&gt;https://isicad.net/articles.php?article_num=14064&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第三代同步技术&quot;&gt;&lt;a href=&quot;#第三代同步技术&quot; class=&quot;headerlink&quot; title=&quot;第三代同步技术&quot;&gt;&lt;/a&gt;第三代同步技术&lt;/h2&gt;&lt;p&gt;根据Deelip [Menezes, 2010]的说法，Solid Edge ST3的新版本具有显着修改的功能树。现在它包括三个部分：有序特征，同步特征和简化视图。首个部分对所有基于由Dr. Samuel Geisberg发展的概念的系统都是典型的，该概念首次在Pro &amp;#x2F; Engineer中实现（然后在CATIA，NX，Solid Edge，SolidWorks，Inventor和许多其他MCAD系统中重复）。它具有通常的参数特征（基于它们的平面草图以及垫片，孔，倒角，圆角，口袋等）。它们形成了一个基于历史的有序树，反映了它们之间的相互依赖。可以使用特殊的对话形式编辑此类特征（例如，可以更改孔的类型，直径，深度和位置）。专业的MCAD用户对此了如指掌。&lt;/p&gt;
+&lt;p&gt;Solid Edge树的另一部分具有同步特征，这些特征最初出现在同步技术的第一次实现中。它们看起来像普通的特征，但具有一个重要的优点：可以通过直接编辑几何图形，任意拖动3D体表面并更改它们的形状来更改这些特征。这就是用户看到的样子：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="几何建模" scheme="https://feelapi.com/categories/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/"/>
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/tags/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="几何算法" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>变分直接建模：如何在无历史CAD中保持设计意图</title>
+    <link href="https://feelapi.com/%E5%8F%98%E5%88%86%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%97%A0%E5%8E%86%E5%8F%B2CAD%E4%B8%AD%E4%BF%9D%E6%8C%81%E8%AE%BE%E8%AE%A1%E6%84%8F%E5%9B%BE.html"/>
+    <id>https://feelapi.com/%E5%8F%98%E5%88%86%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%97%A0%E5%8E%86%E5%8F%B2CAD%E4%B8%AD%E4%BF%9D%E6%8C%81%E8%AE%BE%E8%AE%A1%E6%84%8F%E5%9B%BE.html</id>
+    <published>2024-01-31T07:15:00.000Z</published>
+    <updated>2025-05-18T13:56:55.309Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;文章来自于翻译，原文在：&lt;a href=&quot;https://isicad.net/articles.php?article_num=12886&quot;&gt;https://isicad.net/articles.php?article_num=12886&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;如果使用最先进的3D建模程序（CAD）创建新模型或编辑现有模型似乎复杂到你无法在几个小时内掌握，或许值得关注新的设计技术。即使孩子们也能清晰地在2D画中描绘出他们的思想和梦想；然而，并非每个成年人都能应对到3D图像的过渡，尤其是基于历史的设计技术，如参数化的特征造型，这是大多数“机械”CAD的标准。创建一个基于特征的模型并不难；难的是改变模型时控制特征之间的关系。编辑在不同CAD系统中创建的模型更加困难：因为没有单一的特征标准，所以在翻译过程中一些历史数据必然会丢失。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="几何建模" scheme="https://feelapi.com/categories/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/"/>
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/tags/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="几何算法" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>直接建模</title>
+    <link href="https://feelapi.com/%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1.html"/>
+    <id>https://feelapi.com/%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1.html</id>
+    <published>2024-01-31T06:23:00.000Z</published>
+    <updated>2025-05-18T13:57:32.822Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;文章来自于翻译，原文在：&lt;a href=&quot;https://isicad.net/articles.php?article_num=14805&quot;&gt;https://isicad.net/articles.php?article_num=14805&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;当1985年前苏联的移民、原列宁格勒大学教授塞缪尔·格斯伯格在美国创办了参数化技术公司(PTC)，以开发改变了MCAD（机械计算机辅助设计软件）市场的Pro&amp;#x2F;Engineer系统时，他能想象到基于参数特性的建模会在行业中占主导地位长达四分之一个世纪，并且所有领先的MCAD系统（如CATIA和NX，以及代表Windows一代系统的SolidWorks、Inventor和Solid Edge）会成为Pro&amp;#x2F;Engineer的意识形态后继者吗？他能猜到PTC在取得难以置信的商业成功后，会出人意料地决定牺牲他们的“神圣不可侵犯的”的Pro&amp;#x2F;Engineer品牌吗？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="几何建模" scheme="https://feelapi.com/categories/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/"/>
+    
+    
+    <category term="几何建模" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/"/>
+    
+    <category term="几何算法" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>王慧文清华产品课</title>
+    <link href="https://feelapi.com/%E7%8E%8B%E6%85%A7%E6%96%87%E6%B8%85%E5%8D%8E%E4%BA%A7%E5%93%81%E8%AF%BE.html"/>
+    <id>https://feelapi.com/%E7%8E%8B%E6%85%A7%E6%96%87%E6%B8%85%E5%8D%8E%E4%BA%A7%E5%93%81%E8%AF%BE.html</id>
+    <published>2024-01-14T06:23:00.000Z</published>
+    <updated>2024-01-14T13:26:45.497Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这篇文章是虎牙产品经理旁听&lt;a href=&quot;https://baike.baidu.com/item/%E7%8E%8B%E6%85%A7%E6%96%87/63541&quot;&gt;王慧文&lt;/a&gt;在清华的产品经理课程总结的文字稿，内容非常完整，也很精彩，读完受益良多。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="胡思乱想" scheme="https://feelapi.com/categories/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+    
+    <category term="胡思乱想" scheme="https://feelapi.com/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>离开一个公司的时机[转载]</title>
+    <link href="https://feelapi.com/%E7%A6%BB%E5%BC%80%E4%B8%80%E4%B8%AA%E5%85%AC%E5%8F%B8%E7%9A%84%E6%97%B6%E6%9C%BA[%E8%BD%AC%E8%BD%BD].html"/>
+    <id>https://feelapi.com/%E7%A6%BB%E5%BC%80%E4%B8%80%E4%B8%AA%E5%85%AC%E5%8F%B8%E7%9A%84%E6%97%B6%E6%9C%BA[%E8%BD%AC%E8%BD%BD].html</id>
+    <published>2024-01-11T06:02:00.000Z</published>
+    <updated>2025-05-18T13:57:36.607Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;原文是英文，地址是：&lt;a href=&quot;https://adrianco.medium.com/signs-that-its-time-to-leave-a-company-5f8759ad018e&quot;&gt;https://adrianco.medium.com/signs-that-its-time-to-leave-a-company-5f8759ad018e&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这篇文章很应景，适合我现在的想法，总结起来，离开一个公司的时机：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;公司外部环境不好，但是公司内部策略失衡，不关注产品而是关注xxx&lt;/li&gt;
+&lt;li&gt;股东利益至上，宁可损害员工，客户的利益&lt;/li&gt;
+&lt;li&gt;减员增笑，没有想清楚如何起死回生&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;翻译如下：感谢coze.com提供的免费GPT4&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="胡思乱想" scheme="https://feelapi.com/categories/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+    
+    <category term="职场" scheme="https://feelapi.com/tags/%E8%81%8C%E5%9C%BA/"/>
+    
+    <category term="决策" scheme="https://feelapi.com/tags/%E5%86%B3%E7%AD%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Plasticity源代码介绍</title>
+    <link href="https://feelapi.com/Plasticity%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BB%8B%E7%BB%8D.html"/>
+    <id>https://feelapi.com/Plasticity%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BB%8B%E7%BB%8D.html</id>
+    <published>2023-08-20T07:15:00.000Z</published>
+    <updated>2025-05-18T13:56:33.506Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="几何建模" scheme="https://feelapi.com/categories/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/"/>
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/tags/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="几何算法" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NURBS历史记录</title>
+    <link href="https://feelapi.com/NURBS%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95.html"/>
+    <id>https://feelapi.com/NURBS%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95.html</id>
+    <published>2023-04-01T07:15:00.000Z</published>
+    <updated>2025-05-18T13:56:19.594Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="几何算法" scheme="https://feelapi.com/categories/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="几何算法" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="NURBS" scheme="https://feelapi.com/tags/NURBS/"/>
+    
+    <category term="几何引擎" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iTwin系列-介绍</title>
+    <link href="https://feelapi.com/iTwin%E7%B3%BB%E5%88%97-%E4%BB%8B%E7%BB%8D.html"/>
+    <id>https://feelapi.com/iTwin%E7%B3%BB%E5%88%97-%E4%BB%8B%E7%BB%8D.html</id>
+    <published>2023-04-01T00:51:00.000Z</published>
+    <updated>2025-05-18T13:56:13.845Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/categories/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/tags/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="iTwin.js" scheme="https://feelapi.com/tags/iTwin-js/"/>
+    
+    <category term="CAD软件架构" scheme="https://feelapi.com/tags/CAD%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>俄文翻译-穿越荆棘到云端</title>
+    <link href="https://feelapi.com/%E4%BF%84%E6%96%87%E7%BF%BB%E8%AF%91-%E7%A9%BF%E8%B6%8A%E8%8D%86%E6%A3%98%E5%88%B0%E4%BA%91%E7%AB%AF.html"/>
+    <id>https://feelapi.com/%E4%BF%84%E6%96%87%E7%BF%BB%E8%AF%91-%E7%A9%BF%E8%B6%8A%E8%8D%86%E6%A3%98%E5%88%B0%E4%BA%91%E7%AB%AF.html</id>
+    <published>2023-03-10T13:30:00.000Z</published>
+    <updated>2025-05-18T13:56:46.811Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://isicad.ru/ru/articles.php?article_num=19029&quot;&gt;https://isicad.ru/ru/articles.php?article_num=19029&lt;/a&gt;&lt;br&gt;&lt;em&gt;这篇文章原文是俄文，这里感谢OpenAI的ChatGPT，翻译效果不错，经过微调，发出来大家看看。这篇文章尽管多年之前发表，但是基本的技术路线还是值得参考的。&lt;/em&gt;&lt;br&gt;&lt;em&gt;作者照片&lt;/em&gt;&lt;/p&gt;
+&lt;img border=&quot;2&quot; align=&quot;middle&quot; src=&quot;/images/2023/1.jpg&quot; /&gt;
+
+
+&lt;p&gt;2013年1月，ASKON公司的C3D几何核心被家具CAD开发商Basis-Center公司授权使用。这一事件的后果之一是，2015年8月，Basis-Center公司的开发人员Roman Kolesnikov撰写了一篇名为“CAD中的核技术”的文章。自2005年以来，他一直从事三维建模和可视化工作。&lt;/p&gt;
+&lt;p&gt;在今天向您介绍的新文章中，Roman提出了一个项目，其目标从标题中可以清楚地看出。与2015年的发表相似，作者展示了自己具有很有价值的倾向和能力来证明自己的决策，这使得他的文章具有额外的有益概述和参考特点。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/categories/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/tags/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="CAD软件架构" scheme="https://feelapi.com/tags/CAD%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CAD淘金热</title>
+    <link href="https://feelapi.com/CAD%E6%B7%98%E9%87%91%E7%83%AD.html"/>
+    <id>https://feelapi.com/CAD%E6%B7%98%E9%87%91%E7%83%AD.html</id>
+    <published>2022-12-18T05:01:00.000Z</published>
+    <updated>2025-05-18T13:55:38.505Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/categories/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="CAD" scheme="https://feelapi.com/tags/CAD/"/>
+    
+    <category term="业界新闻" scheme="https://feelapi.com/tags/%E4%B8%9A%E7%95%8C%E6%96%B0%E9%97%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>几何建模中的拓扑结构定义</title>
+    <link href="https://feelapi.com/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E4%B8%AD%E7%9A%84%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89.html"/>
+    <id>https://feelapi.com/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E4%B8%AD%E7%9A%84%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89.html</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2025-05-18T13:41:24.633Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;/files/papers/Topological%20structures%20for%20geometric%20modeling.pdf&quot;&gt;Kevin J. Weiler, Topological structures for geometric modeing, PHD thesis. RPI&lt;/a&gt;. 这是一篇将近四十年前的博士论文，详细介绍了几何建模中使用的拓扑结构。作者还提出了辐射边这种支持非流形的拓扑结构。作者的意图是统一表示框架，曲面，实体等这几种建模方式。根据下图，目前还没有主流的实体建模库采用这种拓扑表示。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="几何算法" scheme="https://feelapi.com/categories/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="几何算法" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="几何引擎" scheme="https://feelapi.com/tags/%E5%87%A0%E4%BD%95%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BIM读书笔记</title>
+    <link href="https://feelapi.com/BIM%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://feelapi.com/BIM%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html</id>
+    <published>2019-12-22T09:12:00.000Z</published>
+    <updated>2025-05-18T13:55:33.795Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近读了几本关于BIM的书，这篇笔记是我的一些不成熟的想法。主要有三本书：《BIM原理总论》，《BIM建模软件原理》，《论BIM》。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CAD开发" scheme="https://feelapi.com/categories/CAD%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="CAD" scheme="https://feelapi.com/tags/CAD/"/>
+    
+    <category term="BIM" scheme="https://feelapi.com/tags/BIM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重读编程精粹</title>
+    <link href="https://feelapi.com/%E9%87%8D%E8%AF%BB%E7%BC%96%E7%A8%8B%E7%B2%BE%E7%B2%B9.html"/>
+    <id>https://feelapi.com/%E9%87%8D%E8%AF%BB%E7%BC%96%E7%A8%8B%E7%B2%BE%E7%B2%B9.html</id>
+    <published>2017-02-28T00:16:01.000Z</published>
+    <updated>2021-10-17T09:50:18.188Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;《编程精粹：编写高质量C语言代码》，英文书名：Writing Solid Code。这本书有两个中文版本，豆瓣链接分别是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://book.douban.com/subject/3406939/&quot;&gt;https://book.douban.com/subject/3406939/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://book.douban.com/subject/1963911/&quot;&gt;https://book.douban.com/subject/1963911/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="胡思乱想" scheme="https://feelapi.com/categories/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+    
+    <category term="读书" scheme="https://feelapi.com/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+    <category term="软件开发" scheme="https://feelapi.com/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+</feed>

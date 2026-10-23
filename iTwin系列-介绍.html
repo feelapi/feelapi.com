@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>iTwin系列-介绍 | 鹤图工坊</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script src="https://www.googletagmanager.com/gtag/js?id=G-PZWJMD6DJN" async></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PZWJMD6DJN');
+</script><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">iTwin系列-介绍</h1><a id="logo" href="/.">鹤图工坊</a><p class="description">深耕几何算法与CAD软件架构，追踪工业软件动态与自主开发，硬核解析几何内核技术</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/cadhistory/"><i class="fa fa-desktop"> 《CAD软件历史》</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">iTwin系列-介绍</h1><div class="post-meta">2023-04-01<span> | </span><span class="category"><a href="/categories/CAD%E5%BC%80%E5%8F%91/">CAD开发</a></span></div><div class="post-content"><p>iTwin相关技术，代表Bentley公司多年技术积累。这里分享相关实现思路和关键技术实现路径。目标是介绍地球另一边的团队是如何开发CAD，换一种思路。以技术介绍为主，少量花边新闻。分享资料来自各种来源，尽量使用公开资料。未公开资料为主观臆测，如有雷同纯属巧合。</p>
+<h2 id="技术传承-–-MicroStation历史"><a href="#技术传承-–-MicroStation历史" class="headerlink" title="技术传承 – MicroStation历史"></a>技术传承 – MicroStation历史</h2><p>iTwin的开发团队，与MicroStation团队高度重合。因此可以说iTwin是MicroStation的技术传承，尽管他们完全不同的形态，但是从代码来看，神似形不似。这里介绍下相关的历史。</p>
+<img src="/images/2023/itwin-1.png" border="2" align="middle" />
+
+<img src="/images/2023/itwin-2.png" border="2" align="middle" />
+
+<p>从文件格式，关键项目的历史看：</p>
+<img src="/images/2023/itwin-3.png" border="2" align="middle" />
+
+<p>为什么开发iTwin? 我在另外一个文章里给出了最重要的原因：<a href="/CAD%E6%B7%98%E9%87%91%E7%83%AD.html">CAD淘金热</a>。Bentley作为老牌公司，在经过多年的研发之后，计划浴火重生。同时，这也是第一代创业者的最后努力了。<a target="_blank" rel="noopener" href="https://www.bentley.com/wp-content/uploads/bsy-022823-keith-bentley-retirement-1.pdf">Keith Bentley，宣布退休</a>。</p>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><table>
+<thead>
+<tr>
+<th><strong>名词</strong></th>
+<th><strong>解释</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DGN</td>
+<td>两个版本DGN  V7, DGN V8。  V8只有windows可用。底层存储为OLE  structured storage。DGN文件与MicroStation  Workspace集成，构成基于文件的项目数据存储。</td>
+</tr>
+<tr>
+<td>iModel</td>
+<td>最初为DGN  with EC（i-Model），还是DGN文件。后来指以SQLite为存储引擎的新一代格式，为端云统一数据存储系统。版本：1.0  （DGN，只读），1.5（SQLIte，可读可写，mobiledgn  5.5），1.6（SQLIte，可读可写，mobiledgn6.0），2.0（SQLIte，协同编辑，BIM）。Microstation支持显示，数据导出到iModel。</td>
+</tr>
+<tr>
+<td>EC(Engineering  Content), ECFramework,</td>
+<td>工程数据框架。2002年左右开始开发。MicroStation XM版本开始，成为DGN文件格式的一部分。由EC Schema（XML文件定义），EC Framework， ECPlugin等部分组成。包括数据格式定义，数据对象实现，DGN支持插件等具体实现。</td>
+</tr>
+<tr>
+<td>iModel.js, iTiwin.js</td>
+<td>iTwin.js最初为iModel.js，iTwin是PaaS服务的名字。统一命名之后，iModel.js改为iTwin.js，但是在代码中，很多还没有修改。作为开源的技术框架，支持用户开发iTwin服务。</td>
+</tr>
+<tr>
+<td>iTwin Platform</td>
+<td>PaaS平台，可独立部署。与iModelHub区别较大，很多服务没有集成。</td>
+</tr>
+<tr>
+<td>iModelHub</td>
+<td>Bentley公司部署的iModel服务，部署在Azure，与Bentley公司其他的云服务集成。</td>
+</tr>
+<tr>
+<td>iTwin Services</td>
+<td>支持PaaS服务所需要的账户服务，开发服务等其他服务。由Bentley管理和部署。</td>
+</tr>
+</tbody></table>
+<h2 id="iTwin技术栈"><a href="#iTwin技术栈" class="headerlink" title="iTwin技术栈"></a>iTwin技术栈</h2><p>拥抱开源:</p>
+<img src="/images/2023/itwin-4.png" border="2" align="middle" />
+
+
+<p>iTwin代表Bentley公司新一代的图形平台，提供数字孪生解决方案，Bentley已经有相关桌面产品基于iTwin技术栈重新开发。iTwin相关技术栈，是为了解决大型CAD开发维护困难，而客户对云服务的需求越来越多，数字孪生迫切需要新的图形平台。作为Bentley2.0战略的核心技术架构，是Bentley公司老一代工程师的技术结晶：</p>
+<ul>
+<li>iTwin.js：核心模块（iModelCore）闭源，与合作伙伴共享代码共同开发（西门子）。显示，数据交换等模块开源，Javascript技术栈。支持桌面，移动设备，云端等多端平台</li>
+<li>iModelHub：Bentley公司提供的SaaS服务，提供iModel数据集成，协同设计，项目管理等云服务</li>
+<li>iTwin Platform：PaaS服务平台，为客户提供数字孪生解决方案。核心是iModelCore封装后的iModelBank服务。提供数据集成服务。协同设计等服务由客户开发。</li>
+</ul>
+<h3 id="技术拼图"><a href="#技术拼图" class="headerlink" title="技术拼图"></a>技术拼图</h3><img src="/images/2023/itwin-5.png" border="2" align="middle" />
+
+
+<h3 id="iModel如何使用"><a href="#iModel如何使用" class="headerlink" title="iModel如何使用"></a>iModel如何使用</h3><ul>
+<li>iModel是数据库系统，基于SQLite开发。</li>
+<li>iModel在云端，桌面，移动设备有不同的存储方式。</li>
+<li>iModel提供基于变更的数据库，类似git；iModelHub提供集成数据环境，项目管理，协同设计，类似github。</li>
+<li>云端微服务架构，微服务使用iModel.js作为接口，使用iModel数据库。</li>
+</ul>
+<img src="/images/2023/itwin-6.png" border="2" align="middle" />
+
+
+<h3 id="iModel-js与iModelHub"><a href="#iModel-js与iModelHub" class="headerlink" title="iModel.js与iModelHub"></a>iModel.js与iModelHub</h3><ul>
+<li>iModel.js(iTwin.js)是开源的iModel读写库</li>
+<li>iModelCore：C++代码库。封装SQLite, ECSQL, BIS等技术，提供iModel核心功能</li>
+<li>iModelNative：Node.js的扩展模块。封装iModelCore，提供Javascript接口。</li>
+<li>iModel.js提供数据读写，WebGL显示等功能</li>
+<li>iModel.js可以嵌入云端，移动端，桌面端。</li>
+<li>iModelHub是Bentley公司的SAAS服务</li>
+<li>很多云服务并没有在iTwin Platform中提供</li>
+</ul>
+<img src="/images/2023/itwin-7.png" border="2" align="middle" />
+
+
+<h3 id="iModelHub与iTwin-Platform的区别"><a href="#iModelHub与iTwin-Platform的区别" class="headerlink" title="iModelHub与iTwin Platform的区别"></a>iModelHub与iTwin Platform的区别</h3><p>iTwin相关核心技术栈式共享的。很多云服务也在逐步融合。iModelHub正在逐步迁移至K8S。</p>
+<img src="/images/2023/itwin-8.png" border="2" align="middle" />
+
+
+<h3 id="iTwin应用"><a href="#iTwin应用" class="headerlink" title="iTwin应用"></a>iTwin应用</h3><p>下面几张图展示了相关的应用架构：</p>
+<img src="/images/2023/itwin-9.png" border="2" align="middle" />
+
+<img src="/images/2023/itwin-10.png" border="2" align="middle" />
+
+
+<h3 id="iModel版本管理"><a href="#iModel版本管理" class="headerlink" title="iModel版本管理"></a>iModel版本管理</h3><img src="/images/2023/itwin-11.png" border="2" align="middle" />
+
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>iTwin的开发，代表了新的CAD开发思路。当然太阳底下没有新鲜事，这些架构设计也不是创新，只是在CAD这个古老的行业，有了新的实现思路，而且已经落地并实现。</p>
+<img src="/images/2023/itwin-12.png" border="2" align="middle" />
+
+<h2 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h2><img src="/images/2023/itwin-13.png" border="2" align="middle" />
+
+<h3 id="iModelCore：核心模块"><a href="#iModelCore：核心模块" class="headerlink" title="iModelCore：核心模块"></a>iModelCore：核心模块</h3><img src="/images/2023/itwin-14.png" border="2" align="middle" />
+
+
+<p>iModelDb是描述不同存储形式的SQLite数据库。BIS既是工程数据定义格式，也是描述数据、SQLite表、字段如何映射的描述文件。</p>
+<img src="/images/2023/itwin-15.png" border="2" align="middle" />
+
+
+<table>
+<thead>
+<tr>
+<th><strong>名称</strong></th>
+<th><strong>存储形式</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Snapshot快照</td>
+<td>SQLite文件</td>
+<td>•只读  •</td>
+</tr>
+<tr>
+<td>Briefcases</td>
+<td>SQLite文件 + Changesets二进制文件</td>
+<td>•与iModelHub同步，支持变更</td>
+</tr>
+<tr>
+<td>对象存储</td>
+<td>SQLite数据库，使用对象存储保存数据</td>
+<td>•iModelHub云端存储形式</td>
+</tr>
+<tr>
+<td>Changesets</td>
+<td>基线SQLite文件 + Changesets二进制文件</td>
+<td>•iTwin(iModelBank)存储形式</td>
+</tr>
+</tbody></table>
+<p>iModel数据库逻辑层次：</p>
+<img src="/images/2023/itwin-16.png" border="2" align="middle" />
+
+<p>与git的三路合并不同，类似rebase的方式。与Fossil类似。底层基于SQLite Session API实现。这是Bentley公司委托SQLite开发团队开发并开源。</p>
+<img src="/images/2023/itwin-18.gif" border="2" align="middle" />
+
+<p>BIS: Base Infrastructure Schemas。定义来自Bentley公司现有的软件的数据定义和相关处理逻辑。支持版本，支持扩展。iModel使用的Schema保存在数据库中，自包含。ECSchema是表达BIS的定义格式。可以从以下网站查看现有的BIS定义：<a target="_blank" rel="noopener" href="https://imodelschemaeditor.bentley.com/">https://imodelschemaeditor.bentley.com/</a></p>
+<img src="/images/2023/itwin-17.png" border="2" align="middle" />
+
+<h3 id="iTwin-js"><a href="#iTwin-js" class="headerlink" title="iTwin .js"></a>iTwin .js</h3><p>软件架构图：</p>
+<img src="/images/2023/itwin-19.png" border="2" align="middle" />
+
+
+<h3 id="Presentation"><a href="#Presentation" class="headerlink" title="Presentation"></a>Presentation</h3><ul>
+<li>Presentation包括前后端，其帮助iModel中检索数据，并负责统一选择。</li>
+<li>从iModel中检索的数据是由用户使用规则以声明方式定义的，这就是为什么该库通常称为“表示规则引擎”。</li>
+<li>基于ECSQL， ECSchema实现。方便用户无代码实现元素的检索和显示</li>
+</ul>
+<img src="/images/2023/itwin-20.png" border="2" align="middle" />
+
+<p>这一系列文章会介绍iTwin相关的开发技术，并不会非常详细。整体设计背后有很多考虑，这里只能简单介绍相关技术。本文内容为<a href="/files/itwin.pptx">ppt</a>的浓缩版</p>
+</div><div class="post-copyright"><script type="text/javascript" src="/js/copyright.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copyright.css?v=1.0.0"><p><span>本文标题：</span>iTwin系列-介绍</p><p><span>文章作者：</span>feelapi</p><p><span>发布时间：</span>2023-04-01</p><p><span>最后更新：</span>2025-05-18</p><p><span>原始链接：</span><a href="/iTwin系列-介绍.html">https://feelapi.com/iTwin%E7%B3%BB%E5%88%97-%E4%BB%8B%E7%BB%8D.html</a><span class="copy-path"><i class="fa fa-clipboard" data-clipboard-text="https://feelapi.com/iTwin%E7%B3%BB%E5%88%97-%E4%BB%8B%E7%BB%8D.html"></i></span></p><p><span>版权声明：</span>本文由feelapi创作和发表,遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-Hans">CC 4.0 BY-SA版权协议</a>, 转载请附上原文出处链接及本声明。</p></div><br><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1157108924106752" crossorigin="anonymous"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1157108924106752" data-ad-slot="1062802220" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CAD%E5%BC%80%E5%8F%91/" rel="tag">CAD开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CAD%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" rel="tag">CAD软件架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iTwin-js/" rel="tag">iTwin.js</a></li></ul></div><div class="post-nav"><a class="pre" href="/NURBS%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95.html">NURBS历史记录</a><a class="next" href="/%E4%BF%84%E6%96%87%E7%BF%BB%E8%AF%91-%E7%A9%BF%E8%B6%8A%E8%8D%86%E6%A3%98%E5%88%B0%E4%BA%91%E7%AB%AF.html">俄文翻译-穿越荆棘到云端</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="author-info"><a class="info-avatar" href="/about/" title="关于"><img class="nofancybox" src="/images/feelapi.jpg"/></a><p>公众号：鹤图工坊</p><a class="info-icon" href="https://twitter.com/feelapi" title="Twitter" target="_blank" style="margin-inline:5px"> <i class="fa fa-twitter-square" style="margin-inline:5px"></i></a><a class="info-icon" href="mailto:hi@feelapi.com" title="Email" target="_blank" style="margin-inline:5px"> <i class="fa fa-envelope-square" style="margin-inline:5px"></i></a><a class="info-icon" href="https://github.com/feelapi" title="Github" target="_blank" style="margin-inline:5px"> <i class="fa fa-github-square" style="margin-inline:5px"></i></a><a class="info-icon" href="/atom.xml" title="RSS" target="_blank" style="margin-inline:5px"> <i class="fa fa-rss-square" style="margin-inline:5px"></i></a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CAD%E5%BC%80%E5%8F%91/">CAD开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/">几何建模</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/">几何算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/">胡思乱想</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/CAD/" style="font-size: 15px;">CAD</a> <a href="/tags/BIM/" style="font-size: 15px;">BIM</a> <a href="/tags/%E4%B8%9A%E7%95%8C%E6%96%B0%E9%97%BB/" style="font-size: 15px;">业界新闻</a> <a href="/tags/CAD%E5%BC%80%E5%8F%91/" style="font-size: 15px;">CAD开发</a> <a href="/tags/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/" style="font-size: 15px;">几何建模</a> <a href="/tags/iTwin-js/" style="font-size: 15px;">iTwin.js</a> <a href="/tags/WEB%E5%BC%80%E5%8F%91/" style="font-size: 15px;">WEB开发</a> <a href="/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" style="font-size: 15px;">胡思乱想</a> <a href="/tags/%E8%81%8C%E5%9C%BA/" style="font-size: 15px;">职场</a> <a href="/tags/%E5%86%B3%E7%AD%96/" style="font-size: 15px;">决策</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 15px;">读书</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" style="font-size: 15px;">软件开发</a> <a href="/tags/%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">科学</a> <a href="/tags/ACIS/" style="font-size: 15px;">ACIS</a> <a href="/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/" style="font-size: 15px;">几何算法</a> <a href="/tags/CAD%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" style="font-size: 15px;">CAD软件架构</a> <a href="/tags/NURBS/" style="font-size: 15px;">NURBS</a> <a href="/tags/%E5%87%A0%E4%BD%95%E5%BC%95%E6%93%8E/" style="font-size: 15px;">几何引擎</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Manus%E7%AB%8B%E9%A1%B9%E8%AE%A8%E8%AE%BA%E7%BA%AA%E8%A6%81.html">Manus立项讨论纪要</a></li><li class="post-list-item"><a class="post-list-link" href="/ACIS%E6%A8%A1%E5%9D%97.html">ACIS模块</a></li><li class="post-list-item"><a class="post-list-link" href="/NIST%E7%9A%84EXPRESS%E8%AF%AD%E8%A8%80%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C.html">NIST的EXPRESS语言工具开发经验</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1.html">多边形建模</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%94%A8%E4%BA%8ECAE%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E7%89%B9%E6%80%A7.html">用于CAE系统的几何建模特性</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%94%A8%E4%BA%8E%E5%BC%BA%E5%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E6%9C%89%E9%99%90%E5%85%83%E7%BD%91%E6%A0%BC%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html">用于强度分析的有限元网格构建基础</a></li><li class="post-list-item"><a class="post-list-link" href="/NURBS%E7%9A%84%E5%8F%91%E6%98%8E%E8%80%85Ken.Versprille%E8%AE%B2%E8%BF%B0CAD%E7%9A%84%E8%BF%87%E5%8E%BB%E7%8E%B0%E5%9C%A8%E5%92%8C%E6%9C%AA%E6%9D%A5.html">NURBS的发明者Ken.Versprille讲述CAD的过去现在和未来</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%90%8C%E6%AD%A5%E5%BB%BA%E6%A8%A1-%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%B0%9D%E8%AF%95.html">同步建模：第三次尝试</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%8F%98%E5%88%86%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%97%A0%E5%8E%86%E5%8F%B2CAD%E4%B8%AD%E4%BF%9D%E6%8C%81%E8%AE%BE%E8%AE%A1%E6%84%8F%E5%9B%BE.html">变分直接建模：如何在无历史CAD中保持设计意图</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1.html">直接建模</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://www.geometrictools.com/" title="Geometric Tools" target="_blank">Geometric Tools</a><ul></ul><a href="https://www.shapr3d.com/content-library/history-of-cad" title="CAD History" target="_blank">CAD History</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/." rel="nofollow">鹤图工坊.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

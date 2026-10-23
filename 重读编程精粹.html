@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>重读编程精粹 | 鹤图工坊</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script src="https://www.googletagmanager.com/gtag/js?id=G-PZWJMD6DJN" async></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PZWJMD6DJN');
+</script><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">重读编程精粹</h1><a id="logo" href="/.">鹤图工坊</a><p class="description">深耕几何算法与CAD软件架构，追踪工业软件动态与自主开发，硬核解析几何内核技术</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/cadhistory/"><i class="fa fa-desktop"> 《CAD软件历史》</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">重读编程精粹</h1><div class="post-meta">2017-02-28<span> | </span><span class="category"><a href="/categories/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/">胡思乱想</a></span></div><div class="post-content"><p>《编程精粹：编写高质量C语言代码》，英文书名：Writing Solid Code。这本书有两个中文版本，豆瓣链接分别是：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/3406939/">https://book.douban.com/subject/3406939/</a></li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/1963911/">https://book.douban.com/subject/1963911/</a></li>
+</ul>
+<span id="more"></span>
+
+
+<p>20年前我看的是最早那个100多页的版本。作者 Steve Maguire， 1986年加入微软公司，开始为Macintosh开发软件。<br>主要是Excel 软件在苹果核微软两个平台上的开发工作。这本书是1993年出版的，当年就获得了Software Development Jolt Productivity Award。<br>这是一个很高的评价。他的另外一本书《Debugging the Development Process》，同样获得了1994年的Software Development Jolt Productivity Award。</p>
+<h2 id="编写无错代码的最好方法是把防上错误放在第一位"><a href="#编写无错代码的最好方法是把防上错误放在第一位" class="headerlink" title="编写无错代码的最好方法是把防上错误放在第一位"></a>编写无错代码的最好方法是把防上错误放在第一位</h2><p>这个原则我很喜欢。开发人员调试代码的时间是比写代码的时间要长的。所以提高工作效率的最好办法是把bug消灭在调试之前。做到这一点，需要经验，作者写这本书的目的是为了介绍成熟的技巧和方法，无论经验丰富的开发者还是初学者，学习书里的方法都会受益。每隔几年我都会读一遍这本书，时刻提醒自己那些还没做到。</p>
+<p>三原则：</p>
+<ul>
+<li>不要接受具有特殊意义的参数，NULL指针表示输入输出使用同一个变量。</li>
+<li>按照设计来实现而不能近似地实现</li>
+<li>努力使每个函数一次就完成住务</li>
+</ul>
+<h3 id="假想的编译程序"><a href="#假想的编译程序" class="headerlink" title="假想的编译程序"></a>假想的编译程序</h3><p>JavaScript代码不需要编译，但这个原则的意思是：写每行代码的时候，你要清楚代码运行的时候，会发生什么事情。 不要光依赖黑箱测试方法。 还应该试着去模仿前面所讲的假想编译程序， 来除排<br>运气对程序测试的影响，自动地抓住错误的每个机会。</p>
+<ul>
+<li>使用编译程序所有的可选警告设施</li>
+<li>增强原型的能力</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void* memchr(const void* pv, int ch, int size);</span><br><span class="line">void* memchr(const void* pv, unsigned char ch, size_t size);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在将新做的修改并入原版源代码之前， 程序员应该实际地进行相应的单元测试</li>
+</ul>
+<h3 id="自己设计并使用断言"><a href="#自己设计并使用断言" class="headerlink" title="自己设计并使用断言"></a>自己设计并使用断言</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strCopy = memcpy(malloc(length), str, length);</span><br></pre></td></tr></table></figure>
+
+<p>编译程序也查不出算法的错误，无法验证程序员所作的假定。既要维护程序的交付版本，又要维护程序的调试版本.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void memcpy(void* pvTo, void* pvFrom, size_t size) &#123;</span><br><span class="line">    void* pbTo = (byte*)pvTo;</span><br><span class="line">    void* pbFrom = (byte*)pvFrom;</span><br><span class="line">    assert(pvTo != NULL &amp;&amp; pvFrom != NULL); </span><br><span class="line">    while(size--&gt;0)</span><br><span class="line">        *pbTo++ == *pbFrom++; return(pvTo);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>要使用断言对函数参数进行确认</li>
+<li>要从程序中删去无定义的特性, 或者在程序中使用断言来检查出无定义特性的非法使用</li>
+<li>不要浪费别人的时间, 详细说明不清楚的断言</li>
+<li>不是用来检查错误的</li>
+<li>消除所做的隐式假定，或者利用断言检查其正确性</li>
+<li>不可能的事用也能发生, 利用断言来检查不可能发生的情况</li>
+<li>在进行防错性程序设计时，不要隐瞒错误. 在出错时，除了要恢复数据，防止崩溃，要用断言来报警。</li>
+<li>要利用不同的算法对程序的结果进行确认</li>
+<li>不要等待错误发生，要使用初始检查程序。 rubbish in, rubbish out</li>
+</ul>
+<h4 id="思考题："><a href="#思考题：" class="headerlink" title="思考题："></a>思考题：</h4><ul>
+<li>当程序员为枚举类型增加新元素时，有时会忘记在相应的switch 语句中增加新的 case 条件。怎样才能使用断言帮助查出这个问题?</li>
+<li>假定你必须维护一个共享库并想在其中使用断言，但又不想发行这个库的源代码， 那么怎样定义 ASSERTMSG 这个断言宏。</li>
+</ul>
+<h3 id="为子系统设防"><a href="#为子系统设防" class="headerlink" title="为子系统设防"></a>为子系统设防</h3><p>子系统都要对其实现细节进行隐藏，所隐藏的实现细节可能相当复杂。 在进行实现细节隐藏的同时， 子系统为用户提供了一些关键的入口点。 程序员通过调用这些关键的入口点来实现不同子系统的通讯。 因此如果在程序中使用这样的子系统并且在其调用点加上调试检查，那么不用花很大力气就可以进行许多的错误检查。由于用户可能得不到子系统的源代码， 或者即使能够得到， 这些源代码的实现也未都必相同，因此可以利用所谓 “外壳” 函数把内存管理程序包装起来， 并在这层包装的内部加上相应的测试代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/* fNewMemory ─── 分配一个内存块 */</span><br><span class="line">bool fNewMemory(void** pv, size_t size)</span><br><span class="line">&#123;</span><br><span class="line">    byte** ppb = (byte**)ppv; </span><br><span class="line">    *ppb = (byte*)malloc(size); </span><br><span class="line">    return(*ppb != NULL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>请求malloc分配长度为零的内存块时，其结果无定义, assert宏可以解决问题。</li>
+<li>如果malloc 分配成功，那么它返回的内存块的内容无定义。 不能简单填充为0，MFC。</li>
+</ul>
+<p>重要的原则：</p>
+<ul>
+<li>要消除随机特性，使错误可再现。</li>
+<li>冲掉无用的信息，以免被错误地使用</li>
+<li>如果某件事甚少发生的话，设法使其经常发生</li>
+<li>保存调试信息，以便进行更强的错误检查</li>
+<li>建立详尽的子系统检查并且经常地进行这些检查</li>
+<li>努力做到透明的一致性检查</li>
+<li>要用大小和速度来换取错误检查能力</li>
+</ul>
+<p> 所加入的调试代码会引起程序交付版本和调试版本之间的区别。但只要在加入调试代码时十分谨慎，并没有改变原有程序的内部行为，那么这种区别就不应该有什么问题。</p>
+<h3 id="对程序进行逐条跟踪"><a href="#对程序进行逐条跟踪" class="headerlink" title="对程序进行逐条跟踪"></a>对程序进行逐条跟踪</h3><p>程序员测试其程序的最好办法是对其进行逐条跟踪。</p>
+<ul>
+<li>要构造出合适的参数，对每一条代码路径进行逐条的跟踪。</li>
+<li>当对代码进行逐条跟踪时，要密切注视数据流，观察变量的值和变化趋势。</li>
+<li>编译器优化程序可能会隐瞒执行的细节，对关键部分的代码要进行汇编指令级的逐条跟踪。</li>
+</ul>
+<h3 id="糖果机界面"><a href="#糖果机界面" class="headerlink" title="糖果机界面"></a>糖果机界面</h3><p>getchar函数的返回值是int，不只是要返回一个char，同时也可以返回EOF，表示结束。如果用char型变量来接受返回值，则会出错。因此，函数的名字有误导性。<br>另外的选择是，定义为：bool getchar(char* pch), </p>
+<ul>
+<li>不要在正常地返回值中隐藏错误代码。</li>
+<li>要编写功能单一的函数，反例就是realloc函数</li>
+<li>编写函数使其在给定有效的输入情况下不会失败。tolow函数，或者断言检查非字母输入，或者原值返回，但是不能出错。减少检查函数返回值的机会。<br>在设计函数时尽量避免返回错误值，以免程序员错误地处理或漏掉这些返回值。</li>
+</ul>
+<h3 id="风险事业"><a href="#风险事业" class="headerlink" title="风险事业"></a>风险事业</h3><p>讨论在某些普通的编码实践中所存在的一些风险， 以及如何做才能减少甚至消除这些风险。</p>
+<ul>
+<li>使用有严格定义的数据类型，尽量用可移植的数据类型。stdint.h</li>
+<li>经常反问: “这个变量表达式会上溢或下溢吗?”</li>
+<li>尽可能精确地实现设计，近似地实现设计就可能出错</li>
+<li>避免无关紧要地 if 语句，避免使用嵌套的“?:“运算符</li>
+<li>每种特殊情况只能处理一次</li>
+<li>避免使用有风险的语言惯用语，移位操作代替除法等</li>
+</ul>
+<p>在某些情况下， 取消一般的错误处理代码是有可能的， 但要保证所做的事情不会失败。这就意味着在初始化时要对错误进行一次性处理或是从根本上改变设计。</p>
+<h3 id="编码中的假象"><a href="#编码中的假象" class="headerlink" title="编码中的假象"></a>编码中的假象</h3><ul>
+<li>只引用属于你自己的存储空间，对象空间的申请，释放要么对象本身自己来负责，要么是由确定的管理着来负责。</li>
+<li>不要利用静态(或全局)量存储区传递数据。尤其是在多线程环境下。</li>
+<li>为一般水平的程序员编写代码，代码尽量简单。</li>
+</ul>
+<h3 id="态度问题"><a href="#态度问题" class="headerlink" title="态度问题"></a>态度问题</h3><p>错误不会消失，要么被掩盖了，要么被悄悄的改正了。需要有探究精神，错误要及时检查，搞清楚啊原因，随着系统的复杂，修复错误的代价越来越高。</p>
+<ul>
+<li>不要通过把改正错误移置产品开发周期的最后阶段来节省时间</li>
+<li>“一次性”地修改错误会带来许多问题</li>
+<li>错误是一种负反馈， 程序开发倒是快了， 却使程序员疏于检查。可以尝试在修改完错误之后再增加新特性。</li>
+<li>若把错误数保持在近乎于 0 的数量上， 就可以很容易地预言产品的完成时间。</li>
+<li>除非关系产品的成败，否则不要整理代码。停止无意义的重构。</li>
+<li>不要实现没有战略意义的特征</li>
+<li>不允许没有必要的灵活性，过度灵活的函数， </li>
+<li>在找到正确的解法之前，不要一味地“试”，要花时间寻求正确的解。看文档，系统学习会节省后续的大量的无意义的尝试时间。</li>
+</ul>
+</div><div class="post-copyright"><script type="text/javascript" src="/js/copyright.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copyright.css?v=1.0.0"><p><span>本文标题：</span>重读编程精粹</p><p><span>文章作者：</span>feelapi</p><p><span>发布时间：</span>2017-02-28</p><p><span>最后更新：</span>2021-10-17</p><p><span>原始链接：</span><a href="/重读编程精粹.html">https://feelapi.com/%E9%87%8D%E8%AF%BB%E7%BC%96%E7%A8%8B%E7%B2%BE%E7%B2%B9.html</a><span class="copy-path"><i class="fa fa-clipboard" data-clipboard-text="https://feelapi.com/%E9%87%8D%E8%AF%BB%E7%BC%96%E7%A8%8B%E7%B2%BE%E7%B2%B9.html"></i></span></p><p><span>版权声明：</span>本文由feelapi创作和发表,遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-Hans">CC 4.0 BY-SA版权协议</a>, 转载请附上原文出处链接及本声明。</p></div><br><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1157108924106752" crossorigin="anonymous"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1157108924106752" data-ad-slot="1062802220" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" rel="tag">软件开发</a></li></ul></div><div class="post-nav"><a class="pre" href="/BIM%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html">BIM读书笔记</a><a class="next" href="/%E6%8F%90%E9%AB%98%E5%AD%A6%E4%B9%A0%E6%95%88%E7%8E%87.html">提高学习效率</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="author-info"><a class="info-avatar" href="/about/" title="关于"><img class="nofancybox" src="/images/feelapi.jpg"/></a><p>公众号：鹤图工坊</p><a class="info-icon" href="https://twitter.com/feelapi" title="Twitter" target="_blank" style="margin-inline:5px"> <i class="fa fa-twitter-square" style="margin-inline:5px"></i></a><a class="info-icon" href="mailto:hi@feelapi.com" title="Email" target="_blank" style="margin-inline:5px"> <i class="fa fa-envelope-square" style="margin-inline:5px"></i></a><a class="info-icon" href="https://github.com/feelapi" title="Github" target="_blank" style="margin-inline:5px"> <i class="fa fa-github-square" style="margin-inline:5px"></i></a><a class="info-icon" href="/atom.xml" title="RSS" target="_blank" style="margin-inline:5px"> <i class="fa fa-rss-square" style="margin-inline:5px"></i></a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CAD%E5%BC%80%E5%8F%91/">CAD开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/">几何建模</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/">几何算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/">胡思乱想</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/CAD/" style="font-size: 15px;">CAD</a> <a href="/tags/BIM/" style="font-size: 15px;">BIM</a> <a href="/tags/%E4%B8%9A%E7%95%8C%E6%96%B0%E9%97%BB/" style="font-size: 15px;">业界新闻</a> <a href="/tags/CAD%E5%BC%80%E5%8F%91/" style="font-size: 15px;">CAD开发</a> <a href="/tags/%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1/" style="font-size: 15px;">几何建模</a> <a href="/tags/iTwin-js/" style="font-size: 15px;">iTwin.js</a> <a href="/tags/WEB%E5%BC%80%E5%8F%91/" style="font-size: 15px;">WEB开发</a> <a href="/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" style="font-size: 15px;">胡思乱想</a> <a href="/tags/%E8%81%8C%E5%9C%BA/" style="font-size: 15px;">职场</a> <a href="/tags/%E5%86%B3%E7%AD%96/" style="font-size: 15px;">决策</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 15px;">读书</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" style="font-size: 15px;">软件开发</a> <a href="/tags/%E7%A7%91%E5%AD%A6/" style="font-size: 15px;">科学</a> <a href="/tags/ACIS/" style="font-size: 15px;">ACIS</a> <a href="/tags/%E5%87%A0%E4%BD%95%E7%AE%97%E6%B3%95/" style="font-size: 15px;">几何算法</a> <a href="/tags/CAD%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" style="font-size: 15px;">CAD软件架构</a> <a href="/tags/NURBS/" style="font-size: 15px;">NURBS</a> <a href="/tags/%E5%87%A0%E4%BD%95%E5%BC%95%E6%93%8E/" style="font-size: 15px;">几何引擎</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Manus%E7%AB%8B%E9%A1%B9%E8%AE%A8%E8%AE%BA%E7%BA%AA%E8%A6%81.html">Manus立项讨论纪要</a></li><li class="post-list-item"><a class="post-list-link" href="/ACIS%E6%A8%A1%E5%9D%97.html">ACIS模块</a></li><li class="post-list-item"><a class="post-list-link" href="/NIST%E7%9A%84EXPRESS%E8%AF%AD%E8%A8%80%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C.html">NIST的EXPRESS语言工具开发经验</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1.html">多边形建模</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%94%A8%E4%BA%8ECAE%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E7%89%B9%E6%80%A7.html">用于CAE系统的几何建模特性</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%94%A8%E4%BA%8E%E5%BC%BA%E5%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E6%9C%89%E9%99%90%E5%85%83%E7%BD%91%E6%A0%BC%E6%9E%84%E5%BB%BA%E5%9F%BA%E7%A1%80.html">用于强度分析的有限元网格构建基础</a></li><li class="post-list-item"><a class="post-list-link" href="/NURBS%E7%9A%84%E5%8F%91%E6%98%8E%E8%80%85Ken.Versprille%E8%AE%B2%E8%BF%B0CAD%E7%9A%84%E8%BF%87%E5%8E%BB%E7%8E%B0%E5%9C%A8%E5%92%8C%E6%9C%AA%E6%9D%A5.html">NURBS的发明者Ken.Versprille讲述CAD的过去现在和未来</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%90%8C%E6%AD%A5%E5%BB%BA%E6%A8%A1-%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%B0%9D%E8%AF%95.html">同步建模：第三次尝试</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%8F%98%E5%88%86%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%97%A0%E5%8E%86%E5%8F%B2CAD%E4%B8%AD%E4%BF%9D%E6%8C%81%E8%AE%BE%E8%AE%A1%E6%84%8F%E5%9B%BE.html">变分直接建模：如何在无历史CAD中保持设计意图</a></li><li class="post-list-item"><a class="post-list-link" href="/%E7%9B%B4%E6%8E%A5%E5%BB%BA%E6%A8%A1.html">直接建模</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://www.geometrictools.com/" title="Geometric Tools" target="_blank">Geometric Tools</a><ul></ul><a href="https://www.shapr3d.com/content-library/history-of-cad" title="CAD History" target="_blank">CAD History</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/." rel="nofollow">鹤图工坊.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
